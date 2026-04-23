@@ -1,0 +1,9 @@
+type,name,intro,section,grade
+section,Welcome to the Course,"<p>This is the introduction section for our course.</p>",1,
+label,Important Notice,"<strong>Please read the syllabus carefully!</strong>",1,
+page,Course Syllabus,"<p>Here are the rules and regulations...</p>",1,
+forum,Introductions Forum,"<p>Introduce yourself to the class here.</p>",1,
+section,Week 1: Fundamentals,"<p>Let's dive into the basics.</p>",2,
+page,Reading Material 1,"<p>Read chapter 1 of the textbook.</p>",2,
+quiz,Week 1 Quiz,"<p>Test your knowledge of the fundamentals.</p>",2,10
+assign,First Assignment,"<p>Submit your essay on chapter 1.</p>",2,100
