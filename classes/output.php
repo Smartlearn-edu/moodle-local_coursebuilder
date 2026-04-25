@@ -42,21 +42,21 @@ class output {
             if (empty($type) || empty($name)) continue;
             
             if ($type === 'section') {
-                $current_section = [
+                $sections[] = [
                     'name' => $name,
                     'intro' => $row['intro'] ?? '',
                     'activities' => []
                 ];
-                $sections[] = &$current_section;
+                $current_section = &$sections[count($sections) - 1];
             } else {
                 if ($current_section === null) {
                     // Create a default "General" section if activities appear before any section
-                    $current_section = [
+                    $sections[] = [
                         'name' => 'General',
                         'intro' => '',
                         'activities' => []
                     ];
-                    $sections[] = &$current_section;
+                    $current_section = &$sections[count($sections) - 1];
                 }
                 $current_section['activities'][] = [
                     'type' => $type,
