@@ -18,13 +18,12 @@ class builder {
         $this->course = $DB->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
     }
     
-    public function process_csv($filepath) {
+    public function parse_csv($filepath) {
         $file = fopen($filepath, 'r');
         if (!$file) {
             throw new \moodle_exception('cannotopenfile');
         }
         
-        // Strip BOM if present
         $bom = fread($file, 3);
         if ($bom !== "\xEF\xBB\xBF") {
             rewind($file);
@@ -35,44 +34,29 @@ class builder {
             throw new \Exception('Invalid or empty CSV file.');
         }
         
-        // Normalize headers to lowercase
         $headers = array_map('strtolower', $headers);
         $headers = array_map('trim', $headers);
         
-        $currentsection = 0;
-        
+        $result = [];
         while (($data = fgetcsv($file)) !== false) {
             if (count($headers) !== count($data)) {
-                // Try to handle empty lines or mismatch
                 continue;
             }
             $row = array_combine($headers, $data);
-            if (!$row) { continue; }
-            
-            $type = trim(strtolower($row['type'] ?? ''));
-            $name = trim($row['name'] ?? '');
-            
-            if (empty($type) || empty($name)) {
-                continue; // Skip invalid rows
-            }
-            
-            if ($type === 'section') {
-                $sectionnum = intval($row['section'] ?? $currentsection + 1);
-                $this->create_or_update_section($sectionnum, $name, $row['intro'] ?? '');
-                $currentsection = $sectionnum;
-            } else {
-                $modsection = !empty($row['section']) ? intval($row['section']) : $currentsection;
-                $this->create_module($type, $modsection, $row);
+            if ($row) {
+                $result[] = $row;
             }
         }
-        
         fclose($file);
-        
-        // Rebuild course cache to ensure all modules are visible.
-        \rebuild_course_cache($this->courseid);
+        return $result;
     }
     
-    public function process_json($filepath) {
+    public function process_csv($filepath) {
+        $data = $this->parse_csv($filepath);
+        $this->build_from_array($data);
+    }
+    
+    public function parse_json($filepath) {
         $content = file_get_contents($filepath);
         if ($content === false) {
             throw new \moodle_exception('cannotopenfile');
@@ -82,19 +66,25 @@ class builder {
         if (!is_array($data)) {
             throw new \Exception('Invalid JSON format.');
         }
-        
+        return $data;
+    }
+    
+    public function process_json($filepath) {
+        $data = $this->parse_json($filepath);
+        $this->build_from_array($data);
+    }
+    
+    public function build_from_array($data) {
         $currentsection = 0;
         
         foreach ($data as $row) {
-            // Convert to case-insensitive access if needed, but JSON usually has specific keys.
-            // Let's normalize keys to lower case just to be safe.
             $row = array_change_key_case($row, CASE_LOWER);
             
             $type = trim(strtolower($row['type'] ?? ''));
             $name = trim($row['name'] ?? '');
             
             if (empty($type) || empty($name)) {
-                continue; // Skip invalid rows
+                continue;
             }
             
             if ($type === 'section') {
@@ -107,50 +97,45 @@ class builder {
             }
         }
         
-        // Rebuild course cache to ensure all modules are visible.
         \rebuild_course_cache($this->courseid);
     }
     
-    public function call_n8n_webhook($prompt) {
-        global $CFG;
-        require_once($CFG->libdir . '/filelib.php');
+    public function call_moodle_ai($prompt) {
+        global $USER;
+        
+        // Define the instruction to force JSON output
+        $system_prompt = "You are an assistant that generates course structures for a Moodle plugin. " .
+            "You MUST return ONLY valid JSON and no other text. Do not use markdown blocks like ```json. " .
+            "The JSON must be an array of objects representing sections and activities. " .
+            "Example valid format: " .
+            '[{"type":"section","name":"Week 1","intro":"Introduction"},{"type":"page","name":"Lesson 1","intro":"Content"}] ' .
+            "User Prompt: " . $prompt;
+            
+        $systemcontext = \context_system::instance();
 
-        $url = get_config('local_coursebuilder', 'webhookurl');
-        $token = get_config('local_coursebuilder', 'webhooktoken');
+        // Create the core AI action
+        $action = new \core_ai\aiactions\generate_text(
+            $systemcontext->id,
+            $USER->id,
+            $system_prompt
+        );
 
-        if (empty($url)) {
-            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', 'Webhook URL not configured.');
+        // Get manager using Moodle 4.5 dependency injection
+        $manager = \core\di::get(\core_ai\manager::class);
+        $result = $manager->process_action($action);
+
+        if (!$result->get_success()) {
+            throw new \moodle_exception('error_ai_provider', 'local_coursebuilder', '', $result->get_error_message());
         }
 
-        $curl = new \curl();
-        $headers = ['Content-Type: application/json'];
-        if (!empty($token)) {
-            $headers[] = 'Authorization: Bearer ' . $token;
-        }
+        $data = $result->get_response_data();
+        $generated_text = $data['generatedcontent'] ?? '';
 
-        $payload = json_encode([
-            'prompt' => $prompt,
-            'courseid' => $this->courseid
-        ]);
+        // Clean up if the AI returned markdown code blocks (e.g. ```json ... ```)
+        $generated_text = preg_replace('/```json\s*/', '', $generated_text);
+        $generated_text = preg_replace('/```\s*/', '', $generated_text);
 
-        $response = $curl->post($url, $payload, [
-            'CURLOPT_HTTPHEADER' => $headers,
-            'CURLOPT_TIMEOUT' => 60,
-            'CURLOPT_CONNECTTIMEOUT' => 10,
-        ]);
-
-        if ($curl->error) {
-            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', $curl->error);
-        }
-
-        $info = $curl->get_info();
-        if ($info['http_code'] >= 400) {
-            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', 'HTTP ' . $info['http_code']);
-        }
-
-        // Return the JSON response string directly.
-        // It's expected to be saved to a file and processed by process_json.
-        return $response;
+        return trim($generated_text);
     }
     
     protected function create_or_update_section($sectionnum, $name, $summary) {

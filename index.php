@@ -23,7 +23,7 @@ if ($mform->is_cancelled()) {
         
         if (!empty(trim($data->aiprompt))) {
             // Process AI Prompt
-            $json_response = $builder->call_n8n_webhook(trim($data->aiprompt));
+            $json_response = $builder->call_moodle_ai(trim($data->aiprompt));
             
             // Check if response is valid JSON
             if (json_decode($json_response) === null) {
