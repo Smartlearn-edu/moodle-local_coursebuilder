@@ -1,0 +1,19 @@
+1. Document to Course (Syllabus Extractor)
+You mentioned this earlier as a future goal. We can add a feature where a teacher uploads a PDF or Word Document syllabus. The plugin extracts the text and passes it to the AI as context, automatically translating their offline syllabus into a fully structured Moodle course.
+
+2. Deep Content Generation (Pages & Quizzes)
+Right now, the AI only generates the "skeleton" (titles and short intros). We can take this deeper:
+
+Pages: If the AI creates a page module named "Introduction to Machine Learning", we can have it automatically write the full HTML lesson content for that page.
+Quizzes: We can have the AI generate actual multiple-choice questions for the quizzes and inject them directly into the Moodle Question Bank, linking them to the quiz instance.
+3. AJAX & Loading States (UX Improvement)
+Currently, when you hit "Generate" or "Modify", the page "hangs" while waiting for the AI provider (DeepSeek) to respond. We could convert the form submission to use AJAX. This would allow us to show a sleek loading spinner or progress bar while the AI thinks, making the plugin feel like a modern, premium web app.
+
+4. Manual Inline Editing
+Sometimes it's faster to just fix a typo yourself than to ask the AI to do it. We could make the Preview UI editable, allowing you to click on a title or intro text and edit it directly in the browser before hitting "Confirm & Build".
+
+5. Security & Moodle Standards
+Right now, anyone who can access the page can build a course. We should implement strict Moodle capability checks (e.g., require_capability('moodle/course:manageactivities', $context)) to ensure only authorized teachers or admins can trigger the AI or build content.
+
+Which of these sounds the most exciting or valuable to you? If none of these hit the mark, we can also focus on polishing the existing code and removing the debug boxes for a production release!
+ 

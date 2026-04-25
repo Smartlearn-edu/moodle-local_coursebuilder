@@ -16,7 +16,9 @@ $string['confirm_build'] = 'Confirm & Build Course';
 $string['modify_heading'] = 'Refine with AI';
 $string['modify_placeholder'] = 'Type your modification request here... (e.g., "Add a quiz to the end of each week", "Rename Section 1 to Introduction")';
 $string['modify_btn'] = 'Modify Course';
+$string['syllabus_file'] = 'Syllabus File (TXT/MD)';
+$string['syllabus_file_help'] = 'Upload a plain text or markdown syllabus. The AI will read this file and automatically convert it into a structured course.';
 
 // Errors
-$string['error_missing_input'] = 'You must provide either a Data File or an AI Course Prompt.';
+$string['error_missing_input'] = 'You must provide a Data File, an AI Course Prompt, or a Syllabus File.';
 $string['error_ai_provider'] = 'Error communicating with Moodle AI Provider: {$a}';

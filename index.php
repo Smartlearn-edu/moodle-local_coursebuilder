@@ -127,9 +127,21 @@ if ($mform->is_cancelled()) {
         $json_data_str = '';
         $debug_output = '';
         
-        if (!empty(trim($data->aiprompt))) {
+        $hassyllabus = !empty($mform->get_new_filename('syllabus_file'));
+        $hasprompt = !empty(trim($data->aiprompt));
+        
+        if ($hassyllabus || $hasprompt) {
+            $final_prompt = trim($data->aiprompt ?? '');
+            
+            if ($hassyllabus) {
+                $syllabus_content = $mform->get_file_content('syllabus_file');
+                if ($syllabus_content) {
+                    $final_prompt .= "\n\n--- SYLLABUS CONTENT ---\n" . trim($syllabus_content);
+                }
+            }
+            
             // Process AI Prompt
-            $json_response = $builder->call_moodle_ai(trim($data->aiprompt));
+            $json_response = $builder->call_moodle_ai($final_prompt);
             $debug_output .= "<div class='alert alert-info mt-3'><strong>Debug Info (Initial Generate Received from AI):</strong><br><pre>" . s($json_response) . "</pre></div>";
             
             // Check if response is valid JSON

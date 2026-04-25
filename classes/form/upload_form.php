@@ -30,6 +30,10 @@ class upload_form extends \moodleform {
         $mform->addElement('textarea', 'aiprompt', get_string('aiprompt', 'local_coursebuilder'), 'wrap="virtual" rows="5" cols="50"');
         $mform->addHelpButton('aiprompt', 'aiprompt', 'local_coursebuilder');
 
+        // Syllabus File for AI.
+        $mform->addElement('filepicker', 'syllabus_file', get_string('syllabus_file', 'local_coursebuilder'), null, ['accepted_types' => ['.txt', '.md', '.csv']]);
+        $mform->addHelpButton('syllabus_file', 'syllabus_file', 'local_coursebuilder');
+
         // Submit button.
         $this->add_action_buttons(false, get_string('submit_upload', 'local_coursebuilder'));
     }
@@ -39,8 +43,9 @@ class upload_form extends \moodleform {
         
         $hasfile = !empty($data['datafile']);
         $hasprompt = !empty(trim($data['aiprompt']));
+        $hassyllabus = !empty($data['syllabus_file']);
         
-        if (!$hasfile && !$hasprompt) {
+        if (!$hasfile && !$hasprompt && !$hassyllabus) {
             $errors['datafile'] = get_string('error_missing_input', 'local_coursebuilder');
             $errors['aiprompt'] = get_string('error_missing_input', 'local_coursebuilder');
         }

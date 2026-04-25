@@ -191,7 +191,7 @@ class builder {
     }
     
     protected function create_module($type, $sectionnum, $row) {
-        global $DB;
+        global $DB, $CFG;
         
         $modname = $this->map_type_to_modname($type);
         if (!$modname) {
@@ -231,8 +231,40 @@ class builder {
         } else if ($modname === 'quiz') {
             $instance->timeopen = 0;
             $instance->timeclose = 0;
+            $instance->timelimit = 0;
+            $instance->overduehandling = 'autoabandon';
+            $instance->graceperiod = 0;
+            $instance->preferredbehaviour = 'deferredfeedback';
+            $instance->canredoquestions = 0;
+            $instance->attempts = 0;
+            $instance->attemptonlast = 0;
+            $instance->grademethod = 1; // QUIZ_GRADEHIGHEST
+            $instance->decimalpoints = 2;
+            $instance->questiondecimalpoints = -1;
+            $instance->questionsperpage = 1;
+            $instance->navmethod = 'free';
+            $instance->shuffleanswers = 1;
             $instance->grade = !empty($row['grade']) ? floatval($row['grade']) : 10;
             $instance->sumgrades = 0;
+            $instance->password = '';
+            $instance->subnet = '';
+            $instance->browsersecurity = '-';
+            $instance->delay1 = 0;
+            $instance->delay2 = 0;
+            $instance->showuserpicture = 0;
+            $instance->showblocks = 0;
+            $instance->completionattemptsexhausted = 0;
+            $instance->completionminattempts = 0;
+            $instance->allowofflineattempts = 0;
+            // Review options - allow review after quiz is closed.
+            $instance->reviewattempt = 69904; // During + Immediately + Open + Closed
+            $instance->reviewcorrectness = 4368; // Immediately + Open + Closed
+            $instance->reviewmaxmarks = 69904;
+            $instance->reviewmarks = 4368;
+            $instance->reviewspecificfeedback = 4368;
+            $instance->reviewgeneralfeedback = 4368;
+            $instance->reviewrightanswer = 4368;
+            $instance->reviewoverallfeedback = 4368;
         }
         
         $instanceid = $DB->insert_record($modname, $instance);
@@ -254,6 +286,50 @@ class builder {
         
         // Create context.
         \context_module::instance($cm->id);
+        
+        // Quiz-specific post-creation steps.
+        if ($modname === 'quiz') {
+            // Create the first quiz section (required for adding questions).
+            $DB->insert_record('quiz_sections', [
+                'quizid' => $instanceid,
+                'firstslot' => 1,
+                'heading' => '',
+                'shufflequestions' => 0,
+            ]);
+            
+            // Create default overall feedback entry.
+            $DB->insert_record('quiz_feedback', [
+                'quizid' => $instanceid,
+                'feedbacktext' => '',
+                'feedbacktextformat' => FORMAT_HTML,
+                'mingrade' => 0,
+                'maxgrade' => $instance->grade + 1,
+            ]);
+            
+            // Create grade item in gradebook.
+            $quizobj = new \stdClass();
+            $quizobj->id = $instanceid;
+            $quizobj->course = $this->courseid;
+            $quizobj->name = $instance->name;
+            $quizobj->grade = $instance->grade;
+            $quizobj->sumgrades = $instance->sumgrades;
+            $quizobj->cmidnumber = '';
+            $quizobj->decimalpoints = $instance->decimalpoints;
+            $quizobj->questiondecimalpoints = $instance->questiondecimalpoints;
+            // Minimal review options for grade_item_update.
+            $quizobj->reviewattempt = $instance->reviewattempt;
+            $quizobj->reviewcorrectness = $instance->reviewcorrectness;
+            $quizobj->reviewmaxmarks = $instance->reviewmaxmarks;
+            $quizobj->reviewmarks = $instance->reviewmarks;
+            $quizobj->reviewspecificfeedback = $instance->reviewspecificfeedback;
+            $quizobj->reviewgeneralfeedback = $instance->reviewgeneralfeedback;
+            $quizobj->reviewrightanswer = $instance->reviewrightanswer;
+            $quizobj->reviewoverallfeedback = $instance->reviewoverallfeedback;
+            $quizobj->timeclose = 0;
+            $quizobj->visible = 1;
+            require_once($CFG->dirroot . '/mod/quiz/lib.php');
+            quiz_grade_item_update($quizobj);
+        }
     }
     
     protected function map_type_to_modname($type) {
