@@ -12,10 +12,24 @@ class builder {
     protected $courseid;
     protected $course;
     
+    /** @var array Tracks created quizzes: [{instanceid, name, sectionname}] */
+    protected $created_quizzes = [];
+    
+    /** @var string Current section name during build */
+    protected $currentsectionname = '';
+    
     public function __construct($courseid) {
         global $DB;
         $this->courseid = $courseid;
         $this->course = $DB->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
+    }
+    
+    /**
+     * Get the list of quizzes created during the last build.
+     * @return array [{instanceid, name, sectionname}]
+     */
+    public function get_created_quizzes() {
+        return $this->created_quizzes;
     }
     
     public function parse_csv($filepath) {
@@ -76,6 +90,8 @@ class builder {
     
     public function build_from_array($data) {
         $currentsection = 0;
+        $this->currentsectionname = '';
+        $this->created_quizzes = [];
         // Map section names to numbers for CSVs that use text names instead of numbers.
         $sectionnamemap = [];
         
@@ -103,6 +119,7 @@ class builder {
                 $sectionnamemap[strtolower($name)] = $sectionnum;
                 $this->create_or_update_section($sectionnum, $name, $row['intro'] ?? '');
                 $currentsection = $sectionnum;
+                $this->currentsectionname = $name;
             } else {
                 // Resolve section: numeric, text name lookup, or current section.
                 $rawsection = trim($row['section'] ?? '');
@@ -381,6 +398,13 @@ class builder {
             $quizobj->visible = 1;
             require_once($CFG->dirroot . '/mod/quiz/lib.php');
             quiz_grade_item_update($quizobj);
+            
+            // Track this quiz for question mapping.
+            $this->created_quizzes[] = [
+                'instanceid' => $instanceid,
+                'name' => $instance->name,
+                'sectionname' => $this->currentsectionname,
+            ];
         }
     }
     

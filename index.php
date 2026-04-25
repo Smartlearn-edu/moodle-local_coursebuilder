@@ -17,6 +17,7 @@ if ($action === 'modify') {
     $courseid = required_param('courseid', PARAM_INT);
     $course_json = required_param('course_json', PARAM_RAW);
     $modify_prompt = required_param('modify_prompt', PARAM_TEXT);
+    $questions_xml = optional_param('questions_xml', '', PARAM_RAW);
     
     try {
         $builder = new \local_coursebuilder\builder($courseid);
@@ -57,6 +58,7 @@ if ($action === 'modify') {
         echo '<input type="hidden" name="action" value="modify">';
         echo '<input type="hidden" name="courseid" value="'.s($courseid).'">';
         echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<input type="hidden" name="questions_xml" value="'.s($questions_xml).'">';
         echo '<div class="form-group">';
         echo '<textarea name="modify_prompt" class="form-control" rows="3" placeholder="' . get_string('modify_placeholder', 'local_coursebuilder') . '"></textarea>';
         echo '</div>';
@@ -70,6 +72,7 @@ if ($action === 'modify') {
         echo '<input type="hidden" name="action" value="build">';
         echo '<input type="hidden" name="courseid" value="'.s($courseid).'">';
         echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<input type="hidden" name="questions_xml" value="'.s($questions_xml).'">';
         echo '<button type="submit" class="btn btn-primary mr-2">' . get_string('confirm_build', 'local_coursebuilder') . '</button>';
         echo '</form>';
         echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';
@@ -93,6 +96,7 @@ if ($action === 'build') {
     
     $courseid = required_param('courseid', PARAM_INT);
     $course_json = required_param('course_json', PARAM_RAW);
+    $questions_xml = optional_param('questions_xml', '', PARAM_RAW);
     
     try {
         $builder = new \local_coursebuilder\builder($courseid);
@@ -102,7 +106,32 @@ if ($action === 'build') {
         
         $builder->process_json($filepath);
         
-        redirect(new moodle_url('/course/view.php', ['id' => $courseid]), 'Course successfully built!', null, \core\output\notification::NOTIFY_SUCCESS);
+        // Import XML questions if provided.
+        $questionsummary = '';
+        if (!empty($questions_xml)) {
+            $xmlpath = $tempdir . '/questions.xml';
+            file_put_contents($xmlpath, $questions_xml);
+            
+            $importer = new \local_coursebuilder\question_importer($courseid);
+            $importer->import_xml($xmlpath);
+            
+            // Map questions to quizzes.
+            $totalquestions = 0;
+            foreach ($builder->get_created_quizzes() as $quizinfo) {
+                $mapped = $importer->map_questions_to_quiz(
+                    $quizinfo['instanceid'],
+                    $quizinfo['name'],
+                    $quizinfo['sectionname']
+                );
+                $totalquestions += $mapped;
+            }
+            
+            if ($totalquestions > 0) {
+                $questionsummary = ' ' . get_string('questions_imported', 'local_coursebuilder', $totalquestions);
+            }
+        }
+        
+        redirect(new moodle_url('/course/view.php', ['id' => $courseid]), 'Course successfully built!' . $questionsummary, null, \core\output\notification::NOTIFY_SUCCESS);
     } catch (\Exception $e) {
         echo $OUTPUT->header();
         echo $OUTPUT->notification('Error building course: ' . $e->getMessage(), 'error');
@@ -173,6 +202,13 @@ if ($mform->is_cancelled()) {
             }
         }
         
+        // Capture XML questions file if uploaded.
+        $questions_xml = '';
+        $hasquestionsfile = !empty($mform->get_new_filename('questionsfile'));
+        if ($hasquestionsfile) {
+            $questions_xml = $mform->get_file_content('questionsfile');
+        }
+        
         // Render Preview
         echo $OUTPUT->header();
         echo $OUTPUT->heading(get_string('preview_heading', 'local_coursebuilder'));
@@ -191,6 +227,7 @@ if ($mform->is_cancelled()) {
         echo '<input type="hidden" name="action" value="modify">';
         echo '<input type="hidden" name="courseid" value="'.s($data->courseid).'">';
         echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<input type="hidden" name="questions_xml" value="'.s($questions_xml).'">';
         echo '<div class="form-group">';
         echo '<textarea name="modify_prompt" class="form-control" rows="3" placeholder="' . get_string('modify_placeholder', 'local_coursebuilder') . '"></textarea>';
         echo '</div>';
@@ -204,6 +241,7 @@ if ($mform->is_cancelled()) {
         echo '<input type="hidden" name="action" value="build">';
         echo '<input type="hidden" name="courseid" value="'.s($data->courseid).'">';
         echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<input type="hidden" name="questions_xml" value="'.s($questions_xml).'">';
         echo '<button type="submit" class="btn btn-primary mr-2">' . get_string('confirm_build', 'local_coursebuilder') . '</button>';
         echo '</form>';
         echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';

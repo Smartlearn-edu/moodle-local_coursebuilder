@@ -26,6 +26,10 @@ class upload_form extends \moodleform {
         // File picker for CSV/JSON.
         $mform->addElement('filepicker', 'datafile', get_string('upload_file', 'local_coursebuilder'), null, ['accepted_types' => ['.csv', '.json']]);
 
+        // File picker for Moodle XML Questions (optional).
+        $mform->addElement('filepicker', 'questionsfile', get_string('questions_file', 'local_coursebuilder'), null, ['accepted_types' => ['.xml']]);
+        $mform->addHelpButton('questionsfile', 'questions_file', 'local_coursebuilder');
+
         // AI Prompt Textarea.
         $mform->addElement('textarea', 'aiprompt', get_string('aiprompt', 'local_coursebuilder'), 'wrap="virtual" rows="5" cols="50"');
         $mform->addHelpButton('aiprompt', 'aiprompt', 'local_coursebuilder');

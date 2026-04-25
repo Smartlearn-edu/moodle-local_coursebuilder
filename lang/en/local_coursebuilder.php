@@ -22,3 +22,8 @@ $string['syllabus_file_help'] = 'Upload a plain text or markdown syllabus. The A
 // Errors
 $string['error_missing_input'] = 'You must provide a Data File, an AI Course Prompt, or a Syllabus File.';
 $string['error_ai_provider'] = 'Error communicating with Moodle AI Provider: {$a}';
+
+// XML Questions
+$string['questions_file'] = 'Questions File (Moodle XML)';
+$string['questions_file_help'] = 'Optional. Upload a Moodle XML question bank file. Questions will be imported into the course Question Bank and automatically mapped to matching quiz activities.';
+$string['questions_imported'] = '{$a} questions imported and mapped to quizzes.';
