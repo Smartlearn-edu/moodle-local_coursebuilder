@@ -25,9 +25,26 @@ class upload_form extends \moodleform {
 
         // File picker for CSV/JSON.
         $mform->addElement('filepicker', 'datafile', get_string('upload_file', 'local_coursebuilder'), null, ['accepted_types' => ['.csv', '.json']]);
-        $mform->addRule('datafile', null, 'required', null, 'client');
+
+        // AI Prompt Textarea.
+        $mform->addElement('textarea', 'aiprompt', get_string('aiprompt', 'local_coursebuilder'), 'wrap="virtual" rows="5" cols="50"');
+        $mform->addHelpButton('aiprompt', 'aiprompt', 'local_coursebuilder');
 
         // Submit button.
         $this->add_action_buttons(false, get_string('submit_upload', 'local_coursebuilder'));
+    }
+
+    public function validation($data, $files) {
+        $errors = parent::validation($data, $files);
+        
+        $hasfile = !empty($data['datafile']);
+        $hasprompt = !empty(trim($data['aiprompt']));
+        
+        if (!$hasfile && !$hasprompt) {
+            $errors['datafile'] = get_string('error_missing_input', 'local_coursebuilder');
+            $errors['aiprompt'] = get_string('error_missing_input', 'local_coursebuilder');
+        }
+        
+        return $errors;
     }
 }

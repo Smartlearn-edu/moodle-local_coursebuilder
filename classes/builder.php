@@ -111,6 +111,48 @@ class builder {
         \rebuild_course_cache($this->courseid);
     }
     
+    public function call_n8n_webhook($prompt) {
+        global $CFG;
+        require_once($CFG->libdir . '/filelib.php');
+
+        $url = get_config('local_coursebuilder', 'webhookurl');
+        $token = get_config('local_coursebuilder', 'webhooktoken');
+
+        if (empty($url)) {
+            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', 'Webhook URL not configured.');
+        }
+
+        $curl = new \curl();
+        $headers = ['Content-Type: application/json'];
+        if (!empty($token)) {
+            $headers[] = 'Authorization: Bearer ' . $token;
+        }
+
+        $payload = json_encode([
+            'prompt' => $prompt,
+            'courseid' => $this->courseid
+        ]);
+
+        $response = $curl->post($url, $payload, [
+            'CURLOPT_HTTPHEADER' => $headers,
+            'CURLOPT_TIMEOUT' => 60,
+            'CURLOPT_CONNECTTIMEOUT' => 10,
+        ]);
+
+        if ($curl->error) {
+            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', $curl->error);
+        }
+
+        $info = $curl->get_info();
+        if ($info['http_code'] >= 400) {
+            throw new \moodle_exception('error_webhook', 'local_coursebuilder', '', 'HTTP ' . $info['http_code']);
+        }
+
+        // Return the JSON response string directly.
+        // It's expected to be saved to a file and processed by process_json.
+        return $response;
+    }
+    
     protected function create_or_update_section($sectionnum, $name, $summary) {
         global $DB;
         
