@@ -13,6 +13,9 @@ $string['submit_upload'] = 'Generate / Upload';
 $string['preview_title'] = 'Course Structure Preview';
 $string['preview_heading'] = 'Review Generated Course';
 $string['confirm_build'] = 'Confirm & Build Course';
+$string['modify_heading'] = 'Refine with AI';
+$string['modify_placeholder'] = 'Type your modification request here... (e.g., "Add a quiz to the end of each week", "Rename Section 1 to Introduction")';
+$string['modify_btn'] = 'Modify Course';
 
 // Errors
 $string['error_missing_input'] = 'You must provide either a Data File or an AI Course Prompt.';

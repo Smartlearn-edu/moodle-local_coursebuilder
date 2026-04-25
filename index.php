@@ -12,6 +12,82 @@ require_login();
 
 $action = optional_param('action', '', PARAM_ALPHANUM);
 
+if ($action === 'modify') {
+    require_sesskey();
+    $courseid = required_param('courseid', PARAM_INT);
+    $course_json = required_param('course_json', PARAM_RAW);
+    $modify_prompt = required_param('modify_prompt', PARAM_TEXT);
+    
+    try {
+        $builder = new \local_coursebuilder\builder($courseid);
+        
+        $debug_output = '';
+        if (!empty(trim($modify_prompt))) {
+            $debug_output .= "<div class='alert alert-warning mt-3'><strong>Debug Info (Sent to AI):</strong><br><strong>Prompt:</strong> " . s($modify_prompt) . "<br><strong>Current JSON:</strong> <pre>" . s($course_json) . "</pre></div>";
+            
+            $json_response = $builder->modify_moodle_ai($course_json, trim($modify_prompt));
+            $debug_output .= "<div class='alert alert-info'><strong>Debug Info (Received from AI):</strong><br><pre>" . s($json_response) . "</pre></div>";
+            
+            $data_array = json_decode($json_response, true);
+            if ($data_array === null) {
+                throw new \Exception('Invalid JSON received from AI Webhook during modification. Raw response: ' . s($json_response));
+            }
+            $json_data_str = $json_response;
+        } else {
+            // If empty prompt, just keep existing
+            $data_array = json_decode($course_json, true);
+            $json_data_str = $course_json;
+        }
+        
+        // Render Preview
+        echo $OUTPUT->header();
+        echo $OUTPUT->heading(get_string('preview_heading', 'local_coursebuilder'));
+        
+        if (!empty($debug_output)) {
+            echo $debug_output;
+        }
+        
+        echo \local_coursebuilder\output::render_preview($data_array);
+        
+        // Render Confirmation Form with Chat
+        echo '<div class="mt-4 p-4 border rounded" style="background: #f8f9fa;">';
+        echo '<h4>' . get_string('modify_heading', 'local_coursebuilder') . '</h4>';
+        echo '<form method="post" action="index.php">';
+        echo '<input type="hidden" name="sesskey" value="'.sesskey().'">';
+        echo '<input type="hidden" name="action" value="modify">';
+        echo '<input type="hidden" name="courseid" value="'.s($courseid).'">';
+        echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<div class="form-group">';
+        echo '<textarea name="modify_prompt" class="form-control" rows="3" placeholder="' . get_string('modify_placeholder', 'local_coursebuilder') . '"></textarea>';
+        echo '</div>';
+        echo '<button type="submit" class="btn btn-info">' . get_string('modify_btn', 'local_coursebuilder') . '</button>';
+        echo '</form>';
+        echo '</div>';
+        
+        echo '<div class="mt-4">';
+        echo '<form method="post" action="index.php" style="display:inline-block;">';
+        echo '<input type="hidden" name="sesskey" value="'.sesskey().'">';
+        echo '<input type="hidden" name="action" value="build">';
+        echo '<input type="hidden" name="courseid" value="'.s($courseid).'">';
+        echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<button type="submit" class="btn btn-primary mr-2">' . get_string('confirm_build', 'local_coursebuilder') . '</button>';
+        echo '</form>';
+        echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';
+        echo '</div>';
+        
+        echo $OUTPUT->footer();
+        die();
+        
+    } catch (\Exception $e) {
+        echo $OUTPUT->header();
+        echo $OUTPUT->notification('Error modifying course data: ' . $e->getMessage(), 'error');
+        // If error, fall back to initial form
+        echo $OUTPUT->continue_button(new moodle_url('/local/coursebuilder/index.php'));
+        echo $OUTPUT->footer();
+        die();
+    }
+}
+
 if ($action === 'build') {
     require_sesskey();
     
@@ -49,15 +125,17 @@ if ($mform->is_cancelled()) {
         
         $data_array = [];
         $json_data_str = '';
+        $debug_output = '';
         
         if (!empty(trim($data->aiprompt))) {
             // Process AI Prompt
             $json_response = $builder->call_moodle_ai(trim($data->aiprompt));
+            $debug_output .= "<div class='alert alert-info mt-3'><strong>Debug Info (Initial Generate Received from AI):</strong><br><pre>" . s($json_response) . "</pre></div>";
             
             // Check if response is valid JSON
             $data_array = json_decode($json_response, true);
             if ($data_array === null) {
-                throw new \Exception('Invalid JSON received from AI Webhook.');
+                throw new \Exception('Invalid JSON received from AI Webhook. Raw response: ' . s($json_response));
             }
             $json_data_str = $json_response;
             
@@ -87,18 +165,36 @@ if ($mform->is_cancelled()) {
         echo $OUTPUT->header();
         echo $OUTPUT->heading(get_string('preview_heading', 'local_coursebuilder'));
         
+        if (!empty($debug_output)) {
+            echo $debug_output;
+        }
+        
         echo \local_coursebuilder\output::render_preview($data_array);
         
-        // Render Confirmation Form
-        echo '<div class="mt-4">';
+        // Render Confirmation Form with Chat
+        echo '<div class="mt-4 p-4 border rounded" style="background: #f8f9fa;">';
+        echo '<h4>' . get_string('modify_heading', 'local_coursebuilder') . '</h4>';
         echo '<form method="post" action="index.php">';
+        echo '<input type="hidden" name="sesskey" value="'.sesskey().'">';
+        echo '<input type="hidden" name="action" value="modify">';
+        echo '<input type="hidden" name="courseid" value="'.s($data->courseid).'">';
+        echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<div class="form-group">';
+        echo '<textarea name="modify_prompt" class="form-control" rows="3" placeholder="' . get_string('modify_placeholder', 'local_coursebuilder') . '"></textarea>';
+        echo '</div>';
+        echo '<button type="submit" class="btn btn-info">' . get_string('modify_btn', 'local_coursebuilder') . '</button>';
+        echo '</form>';
+        echo '</div>';
+        
+        echo '<div class="mt-4">';
+        echo '<form method="post" action="index.php" style="display:inline-block;">';
         echo '<input type="hidden" name="sesskey" value="'.sesskey().'">';
         echo '<input type="hidden" name="action" value="build">';
         echo '<input type="hidden" name="courseid" value="'.s($data->courseid).'">';
         echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
         echo '<button type="submit" class="btn btn-primary mr-2">' . get_string('confirm_build', 'local_coursebuilder') . '</button>';
-        echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';
         echo '</form>';
+        echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';
         echo '</div>';
         
         echo $OUTPUT->footer();

@@ -107,6 +107,7 @@ class builder {
         $system_prompt = "You are an assistant that generates course structures for a Moodle plugin. " .
             "You MUST return ONLY valid JSON and no other text. Do not use markdown blocks like ```json. " .
             "The JSON must be an array of objects representing sections and activities. " .
+            "IMPORTANT Constraints: Do NOT repeat the same section or chapter multiple times. Each section should represent a unique step in the course progression. " .
             "Example valid format: " .
             '[{"type":"section","name":"Week 1","intro":"Introduction"},{"type":"page","name":"Lesson 1","intro":"Content"}] ' .
             "User Prompt: " . $prompt;
@@ -132,6 +133,40 @@ class builder {
         $generated_text = $data['generatedcontent'] ?? '';
 
         // Clean up if the AI returned markdown code blocks (e.g. ```json ... ```)
+        $generated_text = preg_replace('/```json\s*/', '', $generated_text);
+        $generated_text = preg_replace('/```\s*/', '', $generated_text);
+
+        return trim($generated_text);
+    }
+    
+    public function modify_moodle_ai($current_json, $prompt) {
+        global $USER;
+        
+        $system_prompt = "You are an assistant that modifies existing course structures for a Moodle plugin. " .
+            "You MUST return ONLY valid JSON and no other text. Do not use markdown blocks like ```json. " .
+            "The JSON must be an array of objects representing sections and activities. " .
+            "IMPORTANT Constraints: Do NOT repeat the same section multiple times. Ensure each section is distinct and follows a logical progression. Do not return empty sections unless explicitly asked. " .
+            "Current Course Structure: " . $current_json . " " .
+            "User Modification Request: " . $prompt;
+            
+        $systemcontext = \context_system::instance();
+
+        $action = new \core_ai\aiactions\generate_text(
+            $systemcontext->id,
+            $USER->id,
+            $system_prompt
+        );
+
+        $manager = \core\di::get(\core_ai\manager::class);
+        $result = $manager->process_action($action);
+
+        if (!$result->get_success()) {
+            throw new \moodle_exception('error_ai_provider', 'local_coursebuilder', '', $result->get_error_message());
+        }
+
+        $data = $result->get_response_data();
+        $generated_text = $data['generatedcontent'] ?? '';
+
         $generated_text = preg_replace('/```json\s*/', '', $generated_text);
         $generated_text = preg_replace('/```\s*/', '', $generated_text);
 
