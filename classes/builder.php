@@ -29,7 +29,7 @@ class builder {
             rewind($file);
         }
         
-        $headers = fgetcsv($file);
+        $headers = fgetcsv($file, 0, ',', '"', '\\');
         if (!$headers) {
             throw new \Exception('Invalid or empty CSV file.');
         }
@@ -38,7 +38,7 @@ class builder {
         $headers = array_map('trim', $headers);
         
         $result = [];
-        while (($data = fgetcsv($file)) !== false) {
+        while (($data = fgetcsv($file, 0, ',', '"', '\\')) !== false) {
             if (count($headers) !== count($data)) {
                 continue;
             }
@@ -76,6 +76,8 @@ class builder {
     
     public function build_from_array($data) {
         $currentsection = 0;
+        // Map section names to numbers for CSVs that use text names instead of numbers.
+        $sectionnamemap = [];
         
         foreach ($data as $row) {
             $row = array_change_key_case($row, CASE_LOWER);
@@ -88,11 +90,29 @@ class builder {
             }
             
             if ($type === 'section') {
-                $sectionnum = intval($row['section'] ?? $currentsection + 1);
+                // Support both numeric and text-based section identifiers.
+                $rawsection = trim($row['section'] ?? $row['name'] ?? '');
+                if (is_numeric($rawsection)) {
+                    $sectionnum = intval($rawsection);
+                } else {
+                    // Text-based section name — auto-increment.
+                    $sectionnum = $currentsection + 1;
+                    $sectionnamemap[strtolower($rawsection)] = $sectionnum;
+                }
+                // Also map the section name itself for activity lookups.
+                $sectionnamemap[strtolower($name)] = $sectionnum;
                 $this->create_or_update_section($sectionnum, $name, $row['intro'] ?? '');
                 $currentsection = $sectionnum;
             } else {
-                $modsection = !empty($row['section']) ? intval($row['section']) : $currentsection;
+                // Resolve section: numeric, text name lookup, or current section.
+                $rawsection = trim($row['section'] ?? '');
+                if (!empty($rawsection) && is_numeric($rawsection)) {
+                    $modsection = intval($rawsection);
+                } else if (!empty($rawsection) && isset($sectionnamemap[strtolower($rawsection)])) {
+                    $modsection = $sectionnamemap[strtolower($rawsection)];
+                } else {
+                    $modsection = $currentsection;
+                }
                 $this->create_module($type, $modsection, $row);
             }
         }
@@ -265,6 +285,30 @@ class builder {
             $instance->reviewgeneralfeedback = 4368;
             $instance->reviewrightanswer = 4368;
             $instance->reviewoverallfeedback = 4368;
+        } else if ($modname === 'forum') {
+            $instance->type = 'general';
+            $instance->assessed = 0;
+            $instance->scale = 0;
+            $instance->grade_forum = 0;
+            $instance->grade_forum_notify = 0;
+            $instance->maxbytes = 0;
+            $instance->maxattachments = 1;
+            $instance->forcesubscribe = 0;
+            $instance->trackingtype = 1;
+            $instance->rsstype = 0;
+            $instance->rssarticles = 0;
+            $instance->warnafter = 0;
+            $instance->blockafter = 0;
+            $instance->blockperiod = 0;
+            $instance->completiondiscussions = 0;
+            $instance->completionreplies = 0;
+            $instance->completionposts = 0;
+            $instance->displaywordcount = 0;
+            $instance->lockdiscussionafter = 0;
+            $instance->duedate = 0;
+            $instance->cutoffdate = 0;
+            $instance->assesstimestart = 0;
+            $instance->assesstimefinish = 0;
         }
         
         $instanceid = $DB->insert_record($modname, $instance);
@@ -276,7 +320,15 @@ class builder {
         $cm->section = 0;
         $cm->idnumber = '';
         $cm->added = time();
-        $cm->visible = 1;
+        $cm->visible = isset($row['visible']) && $row['visible'] !== '' ? intval($row['visible']) : 1;
+        
+        // Activity completion settings from CSV.
+        if (isset($row['completion']) && $row['completion'] !== '') {
+            $cm->completion = intval($row['completion']);
+        }
+        if (isset($row['completionview']) && $row['completionview'] !== '') {
+            $cm->completionview = intval($row['completionview']);
+        }
         
         $cm->id = $DB->insert_record('course_modules', $cm);
         
