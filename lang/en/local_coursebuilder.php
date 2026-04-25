@@ -9,7 +9,10 @@ $string['upload_file'] = 'Data File (CSV/JSON)';
 $string['aiprompt'] = 'AI Course Prompt';
 $string['aiprompt_help'] = 'Enter a detailed prompt describing the course you want to build. Our AI will generate the required structure for you.';
 $string['aiprompt_desc'] = 'Describe the course you want to build. Our AI will generate the structure for you.';
-$string['submit_upload'] = 'Build Course';
+$string['submit_upload'] = 'Generate / Upload';
+$string['preview_title'] = 'Course Structure Preview';
+$string['preview_heading'] = 'Review Generated Course';
+$string['confirm_build'] = 'Confirm & Build Course';
 
 // Errors
 $string['error_missing_input'] = 'You must provide either a Data File or an AI Course Prompt.';

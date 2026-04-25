@@ -10,6 +10,32 @@ $PAGE->set_heading(get_string('pluginname', 'local_coursebuilder'));
 
 require_login();
 
+$action = optional_param('action', '', PARAM_ALPHANUM);
+
+if ($action === 'build') {
+    require_sesskey();
+    
+    $courseid = required_param('courseid', PARAM_INT);
+    $course_json = required_param('course_json', PARAM_RAW);
+    
+    try {
+        $builder = new \local_coursebuilder\builder($courseid);
+        $tempdir = make_request_directory();
+        $filepath = $tempdir . '/upload.json';
+        file_put_contents($filepath, $course_json);
+        
+        $builder->process_json($filepath);
+        
+        redirect(new moodle_url('/course/view.php', ['id' => $courseid]), 'Course successfully built!', null, \core\output\notification::NOTIFY_SUCCESS);
+    } catch (\Exception $e) {
+        echo $OUTPUT->header();
+        echo $OUTPUT->notification('Error building course: ' . $e->getMessage(), 'error');
+        echo $OUTPUT->continue_button(new moodle_url('/local/coursebuilder/index.php'));
+        echo $OUTPUT->footer();
+        die();
+    }
+}
+
 // Instantiate the form.
 $mform = new \local_coursebuilder\form\upload_form();
 
@@ -21,18 +47,19 @@ if ($mform->is_cancelled()) {
         
         $tempdir = make_request_directory();
         
+        $data_array = [];
+        $json_data_str = '';
+        
         if (!empty(trim($data->aiprompt))) {
             // Process AI Prompt
             $json_response = $builder->call_moodle_ai(trim($data->aiprompt));
             
             // Check if response is valid JSON
-            if (json_decode($json_response) === null) {
+            $data_array = json_decode($json_response, true);
+            if ($data_array === null) {
                 throw new \Exception('Invalid JSON received from AI Webhook.');
             }
-            
-            $filepath = $tempdir . '/upload.json';
-            file_put_contents($filepath, $json_response);
-            $builder->process_json($filepath);
+            $json_data_str = $json_response;
             
         } else {
             // Process uploaded file
@@ -48,17 +75,38 @@ if ($mform->is_cancelled()) {
             file_put_contents($filepath, $content);
             
             if ($ext === 'json') {
-                $builder->process_json($filepath);
+                $data_array = $builder->parse_json($filepath);
+                $json_data_str = $content;
             } else {
-                $builder->process_csv($filepath);
+                $data_array = $builder->parse_csv($filepath);
+                $json_data_str = json_encode($data_array);
             }
         }
         
-        // Redirect to the populated course.
-        redirect(new moodle_url('/course/view.php', ['id' => $data->courseid]), 'Course successfully built!', null, \core\output\notification::NOTIFY_SUCCESS);
+        // Render Preview
+        echo $OUTPUT->header();
+        echo $OUTPUT->heading(get_string('preview_heading', 'local_coursebuilder'));
+        
+        echo \local_coursebuilder\output::render_preview($data_array);
+        
+        // Render Confirmation Form
+        echo '<div class="mt-4">';
+        echo '<form method="post" action="index.php">';
+        echo '<input type="hidden" name="sesskey" value="'.sesskey().'">';
+        echo '<input type="hidden" name="action" value="build">';
+        echo '<input type="hidden" name="courseid" value="'.s($data->courseid).'">';
+        echo '<input type="hidden" name="course_json" value="'.s($json_data_str).'">';
+        echo '<button type="submit" class="btn btn-primary mr-2">' . get_string('confirm_build', 'local_coursebuilder') . '</button>';
+        echo '<a href="index.php" class="btn btn-secondary">' . get_string('cancel', 'moodle') . '</a>';
+        echo '</form>';
+        echo '</div>';
+        
+        echo $OUTPUT->footer();
+        die();
+        
     } catch (\Exception $e) {
         echo $OUTPUT->header();
-        echo $OUTPUT->notification('Error building course: ' . $e->getMessage(), 'error');
+        echo $OUTPUT->notification('Error parsing course data: ' . $e->getMessage(), 'error');
         echo $OUTPUT->continue_button(new moodle_url('/local/coursebuilder/index.php'));
         echo $OUTPUT->footer();
         die();
