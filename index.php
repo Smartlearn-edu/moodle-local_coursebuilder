@@ -17,23 +17,30 @@ if ($mform->is_cancelled()) {
     redirect(new moodle_url('/local/coursebuilder/index.php'));
 } else if ($data = $mform->get_data()) {
     // Process the form data.
-    $content = $mform->get_file_content('csvfile');
+    $content = $mform->get_file_content('datafile');
+    $filename = $mform->get_new_filename('datafile');
+    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
     
     if (!$content) {
         throw new \moodle_exception('errorreadingfile', 'error');
     }
     
-    // Save file temporarily for fgetcsv.
+    // Save file temporarily.
     $tempdir = make_request_directory();
-    $filepath = $tempdir . '/upload.csv';
+    $filepath = $tempdir . '/upload.' . $ext;
     file_put_contents($filepath, $content);
     
     try {
         $builder = new \local_coursebuilder\builder($data->courseid);
-        $builder->process_csv($filepath);
+        
+        if ($ext === 'json') {
+            $builder->process_json($filepath);
+        } else {
+            $builder->process_csv($filepath);
+        }
         
         // Redirect to the populated course.
-        redirect(new moodle_url('/course/view.php', ['id' => $data->courseid]), 'Course successfully built from CSV!', null, \core\output\notification::NOTIFY_SUCCESS);
+        redirect(new moodle_url('/course/view.php', ['id' => $data->courseid]), 'Course successfully built from data file!', null, \core\output\notification::NOTIFY_SUCCESS);
     } catch (\Exception $e) {
         echo $OUTPUT->header();
         echo $OUTPUT->notification('Error building course: ' . $e->getMessage(), 'error');

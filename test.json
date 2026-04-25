@@ -1,0 +1,13 @@
+[
+  {
+    "type": "section",
+    "name": "Introduction",
+    "intro": "Welcome to the course"
+  },
+  {
+    "type": "page",
+    "name": "Getting Started Guide",
+    "intro": "Please read these instructions carefully."
+  }
+]
+ 

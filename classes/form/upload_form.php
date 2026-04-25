@@ -23,9 +23,9 @@ class upload_form extends \moodleform {
         $mform->addElement('select', 'courseid', get_string('select_course', 'local_coursebuilder'), $courses);
         $mform->addRule('courseid', null, 'required', null, 'client');
 
-        // File picker for CSV.
-        $mform->addElement('filepicker', 'csvfile', get_string('upload_csv', 'local_coursebuilder'), null, ['accepted_types' => ['.csv']]);
-        $mform->addRule('csvfile', null, 'required', null, 'client');
+        // File picker for CSV/JSON.
+        $mform->addElement('filepicker', 'datafile', get_string('upload_file', 'local_coursebuilder'), null, ['accepted_types' => ['.csv', '.json']]);
+        $mform->addRule('datafile', null, 'required', null, 'client');
 
         // Submit button.
         $this->add_action_buttons(false, get_string('submit_upload', 'local_coursebuilder'));

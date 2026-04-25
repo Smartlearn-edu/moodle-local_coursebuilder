@@ -72,6 +72,45 @@ class builder {
         \rebuild_course_cache($this->courseid);
     }
     
+    public function process_json($filepath) {
+        $content = file_get_contents($filepath);
+        if ($content === false) {
+            throw new \moodle_exception('cannotopenfile');
+        }
+        
+        $data = json_decode($content, true);
+        if (!is_array($data)) {
+            throw new \Exception('Invalid JSON format.');
+        }
+        
+        $currentsection = 0;
+        
+        foreach ($data as $row) {
+            // Convert to case-insensitive access if needed, but JSON usually has specific keys.
+            // Let's normalize keys to lower case just to be safe.
+            $row = array_change_key_case($row, CASE_LOWER);
+            
+            $type = trim(strtolower($row['type'] ?? ''));
+            $name = trim($row['name'] ?? '');
+            
+            if (empty($type) || empty($name)) {
+                continue; // Skip invalid rows
+            }
+            
+            if ($type === 'section') {
+                $sectionnum = intval($row['section'] ?? $currentsection + 1);
+                $this->create_or_update_section($sectionnum, $name, $row['intro'] ?? '');
+                $currentsection = $sectionnum;
+            } else {
+                $modsection = !empty($row['section']) ? intval($row['section']) : $currentsection;
+                $this->create_module($type, $modsection, $row);
+            }
+        }
+        
+        // Rebuild course cache to ensure all modules are visible.
+        \rebuild_course_cache($this->courseid);
+    }
+    
     protected function create_or_update_section($sectionnum, $name, $summary) {
         global $DB;
         
