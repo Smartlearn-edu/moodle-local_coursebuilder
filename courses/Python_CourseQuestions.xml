@@ -1,0 +1,2043 @@
+<?xml version="1.0" ?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Introduction / Introduction - Welcome to Python</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[INT] What command checks your Python version in the ter...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What command checks your Python version in the terminal?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;python --version (or python3 --version on Mac/Linux)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;check python&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;python -v&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;py version&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[INT] What is pip used for?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is pip used for?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Installing third-party Python packages and libraries&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Running python scripts&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Formatting code&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Compiling python&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[INT] True or False: Python is a compiled language.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;True or False: Python is a compiled language.&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;False — Python is an interpreted language&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;True — it compiles to machine code&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;True — it uses gcc&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;False — it is a markup language&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[INT] Which company created the boto3 library for Python...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which company created the boto3 library for Python?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Amazon (for AWS cloud services)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Google&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Microsoft&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Meta&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[INT] What built-in function gets text input from a user...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What built-in function gets text input from a user?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;input()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;get()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;read()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;scan()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 1 / Unit 1 - Python Basics</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY1] What data type does price = 9.99 produce?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What data type does price = 9.99 produce?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;float&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;int&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;str&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;decimal&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY1] What is the result of 17 % 5?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is the result of 17 % 5?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;2 (modulo — the remainder after division)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;3&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;3.4&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;12&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY1] How do you convert the string '42' to an integer?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;How do you convert the string '42' to an integer?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;int('42')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;integer('42')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;parse('42')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;to_int('42')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY1] Which f-string format prints price to exactly 2 de...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which f-string format prints price to exactly 2 decimal places?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;f'{price:.2f}'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;f'{price:2}'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;f'{price.2f}'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;f'{price.round(2)}'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY1] What does in_stock = not False evaluate to?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does in_stock = not False evaluate to?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;True&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;False&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;None&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Error&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 2 / Unit 2 - Control Flow</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY2] What does range(2, 10, 2) produce?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does range(2, 10, 2) produce?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;[2, 4, 6, 8] — start at 2, stop before 10, step 2&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[2, 4, 6, 8, 10]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[1, 3, 5, 7, 9]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[2, 10]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY2] Which keyword skips to the next loop iteration?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which keyword skips to the next loop iteration?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;continue&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;break&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;pass&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;skip&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY2] What happens if a while loop condition is always T...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What happens if a while loop condition is always True with no break?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Infinite loop — the program never stops&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;The loop skips&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;The program pauses&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It runs once&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY2] Write a one-line list comprehension: squares of 1 ...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Write a one-line list comprehension: squares of 1 to 5.&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;[x**2 for x in range(1, 6)]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[x^2 for x in range(5)]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;list(1, 5)^2&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[x*2 in 1..5]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY2] What is the difference between == and = in Python?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is the difference between == and = in Python?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;== compares two values (returns bool). = assigns a value to a variable.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;= compares, == assigns&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;They are the same&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;== is for strings only&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 3 / Unit 3 - Functions &amp; Modules</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY3] What keyword returns a value from a function?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What keyword returns a value from a function?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;return&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;output&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;yield&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;print&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY3] What is a default argument? Give an example.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is a default argument? Give an example.&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;A parameter with a pre-set value: def greet(name='World'):&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;An argument that cannot be changed.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;An argument that is randomly generated.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;An error handling argument.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY3] What does LEGB stand for in Python scope?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does LEGB stand for in Python scope?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Local, Enclosing, Global, Built-in&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Logical, External, Global, Boolean&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Local, External, Generic, Basic&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Loop, Execute, Go, Break&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY3] Which module would you use to generate a random in...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which module would you use to generate a random integer?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;random — use random.randint(a, b)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;math&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;numbers&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;calc&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY3] What is wrong with: def add(a, b): print(a + b)?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is wrong with: def add(a, b): print(a + b)?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;It prints instead of returning the result. Should be: return a + b&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It has no type hints.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It doesn't use f-strings.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It uses addition.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 4 / Unit 4 - Data Structures</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY4] Which data structure guarantees no duplicate value...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which data structure guarantees no duplicate values?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Set {}&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;List []&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Tuple ()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Dict {}&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY4] How do you safely get a dict value that might not ...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;How do you safely get a dict value that might not exist?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;dict.get('key', default) — avoids KeyError if the key is missing&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;dict['key']&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;dict.find('key')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;dict.safe('key')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY4] What is the key difference between a list and a tu...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is the key difference between a list and a tuple?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Lists are mutable (changeable); tuples are immutable (fixed after creation)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Lists are ordered; tuples are unordered.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Tuples can hold different types; lists cannot.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;They are the exact same.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY4] How do you find elements present in both set_a and...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;How do you find elements present in both set_a and set_b?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;set_a &amp; set_b or set_a.intersection(set_b)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;set_a + set_b&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;set_a | set_b&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;set_a - set_b&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY4] Write a dict comprehension mapping 1–5 to their sq...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Write a dict comprehension mapping 1–5 to their squares.&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;{x: x**2 for x in range(1, 6)}&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;[x: x^2 for x in range(5)]&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;map(square, 1..5)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;{x, x*2 for 1 to 5}&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 5 / Unit 5 - File Handling &amp; Exception Management</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY5] Which file mode appends without erasing existing c...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which file mode appends without erasing existing content?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;'a' (append mode)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;'w'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;'r+'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;'x'&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY5] Why use with open(...) instead of just open(...)?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Why use with open(...) instead of just open(...)?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;with automatically closes the file even if an exception occurs&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It reads the file faster.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It parses JSON automatically.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It creates backups.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY5] Which exception is raised when a file does not exi...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which exception is raised when a file does not exist?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;FileNotFoundError&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;IOError&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;MissingFileError&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;NullReferenceException&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY5] What does the finally block do?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does the finally block do?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Runs always — whether or not an exception occurred — used for cleanup&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Runs only if an error happens.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Runs only if no error happens.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Restarts the program.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY5] How do you raise a custom error with a message?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;How do you raise a custom error with a message?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;raise ValueError('your message here')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;throw Error('message')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;return ValueError('message')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;error('message')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 6 / Unit 6 - Object-Oriented Programming (OOP)</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY6] What is the purpose of __init__ in a Python class?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is the purpose of __init__ in a Python class?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;It initializes instance attributes when an object is created (the constructor method)&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It destroys the object.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It prints the object.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;It loops the object.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY6] What does super().__init__() do?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does super().__init__() do?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Calls the parent class’s constructor — ensures parent attributes are initialized&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Makes the class super fast.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Calls a sibling class.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Deletes parent attributes.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY6] What is polymorphism? Give a one-sentence example.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What is polymorphism? Give a one-sentence example.&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Same method name behaves differently per subclass&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;A class having many attributes.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Hiding data from the user.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Writing code that never crashes.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY6] What naming convention marks a private attribute?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What naming convention marks a private attribute?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Single underscore prefix: self._balance&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Double underscore suffix: balance__.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;UPPERCASE: BALANCE.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;private keyword.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY6] What does self refer to in a method?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does self refer to in a method?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;The specific instance (object) the method is being called on&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;The class itself.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;The parent class.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;The global namespace.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="category">
+    <category>
+      <text>$course$/top/Python Programming / Unit 7 / Unit 7 - CAPSTONE</text>
+    </category>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY7] Which Python library is used to make HTTP requests...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;Which Python library is used to make HTTP requests?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;requests — install with: pip install requests&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;http&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;fetch&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;web&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY7] What does response.json() return?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does response.json() return?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;A Python dict or list parsed from the JSON response body&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;A string of JSON text.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;An XML document.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;A pandas DataFrame.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY7] How do you load a CSV file into a pandas DataFrame...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;How do you load a CSV file into a pandas DataFrame?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;df = pd.read_csv('filename.csv')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df = pandas.load('filename.csv')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df = pd.open('filename.csv')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df = read_file('filename.csv')&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY7] What does raise_for_status() do?</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What does raise_for_status() do?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;Raises an HTTPError if the response status code is 4xx or 5xx&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Prints the status code.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Retries the request.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;Returns True if successful.&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>[PY7] What pandas method gives count, mean, min, and max...</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&lt;p&gt;What pandas method gives count, mean, min, and max for numeric columns?&lt;/p&gt;]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html">
+      <text>Correct!</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text/>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Review the lesson content and try again.</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[&lt;p&gt;df.describe()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text>Correct!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df.stats()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df.summary()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[&lt;p&gt;df.info()&lt;/p&gt;]]></text>
+      <feedback format="html">
+        <text/>
+      </feedback>
+    </answer>
+  </question>
+</quiz>

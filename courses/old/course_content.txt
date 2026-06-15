@@ -1,0 +1,1092 @@
+
+
+  COURSE CONTENT DOCUMENT  —  FACULTY & LEARNER EDITION
+
+
+
+Course
+Python Programming: Project-Based Learning
+Industry Themes
+Amazon · Google · Netflix · Spotify · Meta · Uber
+Duration
+8 Weeks | ~160–200 hrs total | 2–3 hrs/week
+Tools
+Python 3.11+ | Replit / JupyterLite | pandas | matplotlib | requests
+Activities per Unit
+Core Concepts · Coding Practice · External Tab · Readings · Forum · Project · Quiz
+Capstone
+Real-API Data Dashboard using any Big Tech public API
+
+Why Industry-Themed Projects?
+Every project in this course models a real engineering challenge at a leading tech company. You are not just learning Python syntax — you are building the kind of systems that power the apps you use every day. By the end of this course you will have a portfolio of 7 company-themed mini-projects plus one capstone project, all ready for interviews or internship applications.
+
+
+
+  Introduction: Welcome to Python — Your Gateway to Big Tech
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Set up a fully working Python development environment
+Understand the Python ecosystem and how top companies use it
+Write and run your first Python script successfully
+Navigate Moodle, the coding tab, and course resources
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Python is the #1 language at Google, Netflix, Amazon, Instagram & Spotify — for web, ML, automation, and cloud. Let’s get your environment ready and write your first script.
+
+Key Concepts:
+What is Python? Interpreted, high-level, dynamically typed
+Python 3.x — always use Python 3.11 or higher
+The ecosystem: pip, virtual environments, standard library
+How Amazon uses Python: AWS Lambda, boto3, data pipelines
+Running Python: terminal scripts, Jupyter notebooks, cloud functions
+
+Your first script (run in the coding tab):
+# hello_aws.py — Your first script
+print("Hello, World!")
+print("Python version check:")
+import sys
+print(f"Running Python {sys.version}")
+name = input("What is your name? ")
+print(f"Welcome to Python, {name}! Let's build something Amazon-worthy.")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Setup Verification
+Run python --version in your terminal. It should show Python 3.x. Then write a script that prints your version using import sys and print(sys.version).
+💡 Hint: Type python --version in the terminal, not inside a Python file.
+Exercise 2: Personal Intro Script
+Write a script that asks for your name, age, and dream company with input(), then prints a formatted welcome message using an f-string.
+💡 Hint: f-string example: f'Hello {name}, welcome to Python!'
+Exercise 3: Explore pip
+Run pip list in your terminal and write a Python script that prints a welcome message listing 3 Python libraries you want to learn. This mirrors how Amazon engineers check their environment on Day 1.
+💡 Hint: Just hardcode the 3 library names as strings — no need to programmatically read pip yet.
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Introduction coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Official Tutorial
+https://docs.python.org/3/tutorial/index.html
+Why read this: The authoritative beginner reference — every Python developer bookmarks this.
+
+2. How Amazon Uses Python (AWS Blog)
+https://aws.amazon.com/developer/language/python/
+Why read this: Real-world Python usage in production at Amazon scale.
+
+3. Real Python: First Steps
+https://realpython.com/python-first-steps/
+Why read this: Well-structured intro with interactive examples.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Think of a problem in your daily life that repeats. How could a Python script automate or simplify it? Describe the problem in 150–200 words and explain what your script would do. Reply to 2 peers and suggest one Python feature they could use.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — AMAZON     ⏱ 45 minutes
+Project: Dev Environment Showcase
+Every Amazon engineer starts Day 1 by setting up their environment exactly right. Prove yours is production-ready.
+Tasks:
+Screenshot of python --version showing Python 3.x
+A script setup_check.py that prints your Python version, OS name, and 5 installed packages
+A short reflection (100 words): Why Python? What do you want to build?
+
+Deliverable: Submit: setup_check.py + screenshot + reflection.txt
+
+Grading Rubric:
+Criteria
+Marks
+Environment set up correctly
+3/10
+Script runs without errors
+3/10
+Reflection is thoughtful
+2/10
+Submission is complete
+2/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. What command checks your Python version in the terminal?
+Answer: python --version  (or python3 --version on Mac/Linux)
+Q2. What is pip used for?
+Answer: Installing third-party Python packages and libraries
+Q3. True or False: Python is a compiled language.
+Answer: False — Python is an interpreted language
+Q4. Which company created the boto3 library for Python?
+Answer: Amazon (for AWS cloud services)
+Q5. What built-in function gets text input from a user?
+Answer: input()
+
+
+
+
+
+  Unit 1: Python Basics: Variables, Data Types & Operators
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Declare and use variables following Python naming conventions
+Work with int, float, str, bool and NoneType
+Apply arithmetic, comparison, and logical operators
+Use type conversion and f-string formatting
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Amazon’s recommendation engine — the system behind 'Customers also bought…' — starts with product data: IDs (int), prices (float), names (str), availability (bool). These core data types are the foundation of every Python program.
+
+Key Concepts:
+Variables: containers for data (int, float, str, bool, NoneType)
+Naming: snake_case, descriptive, no reserved words
+Arithmetic: +  −  *  /  //  %  ** (floor div, modulo, power)
+Comparison operators: ==  !=  >  <  >=  <=  (return bool)
+Type conversion: int() float() str() bool()
+String methods: .upper() .lower() .strip() .replace() .split()
+f-strings: f'Product: {name}, Price: ${price:.2f}'
+
+Amazon product data — core types in action:
+# Amazon product variables
+product_id     = 101
+product_name   = "Wireless Headphones"
+price          = 49.99
+in_stock       = True
+discount_pct   = 0.15
+
+# Calculate discounted price
+discounted     = price * (1 - discount_pct)
+
+# Display like an Amazon listing
+print(f"Shopping {product_name}")
+print(f"   Price:      ${price:.2f}")
+print(f"   Discounted: ${discounted:.2f}")
+print(f"   In Stock:   {in_stock}")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Product Listing
+Create variables for 3 Amazon products (id, name, price, in_stock). Print a formatted listing for each using f-strings with 2 decimal places for prices.
+💡 Hint: Use a consistent format. f'{price:.2f}' formats to 2 decimal places.
+Exercise 2: Price Calculator
+Build a discount calculator: input original_price and discount_percent, output final_price and savings. Use round() for precision.
+💡 Hint: savings = original_price * (discount_percent / 100). Use round(value, 2).
+Exercise 3: String Manipulator
+Take a product name as input. Print it in UPPER, lower, and Title Case. Count characters with len(). Check if 'pro' appears in the name (True/False).
+💡 Hint: Use .upper() .lower() .title() len() and the 'in' keyword.
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 1 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Built-in Types — Official Docs
+https://docs.python.org/3/library/stdtypes.html
+Why read this: Complete reference for all built-in Python types.
+
+2. Real Python: Variables in Python
+https://realpython.com/python-variables/
+Why read this: Practical guide with common mistakes to avoid.
+
+3. f-Strings: A New and Improved Way to Format Strings
+https://realpython.com/python-f-strings/
+Why read this: f-strings are the standard in all modern Python codebases.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Amazon tracks hundreds of product attributes per listing. If you were designing a Python-based product catalog, what data types would you assign to: rating, number of reviews, prime eligibility, seller name, and delivery date? Explain your choices in 150–200 words. Reply to 2 peers and suggest one type they may have reconsidered.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — AMAZON     ⏱ 45 minutes
+Project: Amazon Product Price Tracker
+Amazon’s pricing team monitors price changes across millions of products. Build a mini price-tracker simulating this logic.
+Tasks:
+Define 5 products as variables: name, original_price, discount_pct
+Calculate and display: discounted price, savings, and a DEAL label if savings > 20%
+Format output in aligned columns with 2 decimal places
+Calculate and print total cart value at the bottom
+
+Deliverable: price_tracker.py with clean formatted output and inline comments
+
+Grading Rubric:
+Criteria
+Marks
+Correct variable use and data types
+3/10
+Price calculations are accurate
+3/10
+Output is well-formatted and aligned
+2/10
+Comments explain the logic
+2/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. What data type does  price = 9.99  produce?
+Answer: float
+Q2. What is the result of 17 % 5?
+Answer: 2 (modulo — the remainder after division)
+Q3. How do you convert the string '42' to an integer?
+Answer: int('42')
+Q4. Which f-string format prints price to exactly 2 decimal places?
+Answer: f'{price:.2f}'
+Q5. What does  in_stock = not False  evaluate to?
+Answer: True
+
+
+
+
+
+  Unit 2: Control Flow: Conditions & Loops
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Write if / elif / else statements for program branching
+Build for loops to iterate over sequences and ranges
+Build while loops for condition-based repetition
+Use break, continue, and range() effectively
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Google processes 8.5 billion searches a day. Behind each one: is this query safe? Is it spam? Which results rank highest? All of this is if-else logic and loops — running billions of times per day.
+
+Key Concepts:
+if / elif / else — branching decisions
+Nested conditions with and, or, not
+for loops over range(), lists, strings, dicts
+while loops — repeat until condition becomes False
+break exits the loop  |  continue skips to next iteration
+List comprehensions: [x*2 for x in range(10) if x % 2 == 0]
+
+Google-style search query classifier:
+# Search query safety classifier (simplified Google-style)
+BANNED_WORDS = ["spam", "hack", "cheat"]
+
+def classify_query(query):
+    query_lower = query.lower()
+    for word in BANNED_WORDS:
+        if word in query_lower:
+            return "BLOCKED"
+    if len(query_lower) < 3:
+        return "TOO_SHORT"
+    elif len(query_lower) > 200:
+        return "TOO_LONG"
+    else:
+        return "SAFE"
+
+queries = ["Python tutorial", "hack wifi", "ai", "how to learn machine learning"]
+for q in queries:
+    print(f"  '{q[:30]}' -> {classify_query(q)}")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Search Filter
+Process a list of 10 search queries. Classify each as SHORT (<5 chars), NORMAL (5–50), or LONG (>50). Print counts for each category.
+💡 Hint: Use a for loop with if/elif/else and counter variables: short_count = 0
+Exercise 2: Number Guesser
+Build a while-loop guessing game: the computer picks 1–100, the user keeps guessing, the loop gives HIGHER/LOWER hints, exits on correct. Count the attempts.
+💡 Hint: Use random.randint(1, 100) and while True: with break on correct guess.
+Exercise 3: FizzBuzz — Google Edition
+Print 1–100. Multiples of 3: 'Google'. Multiples of 5: 'Search'. Both: 'GoogleSearch'. All others: the number.
+💡 Hint: Check divisibility with %. Check the combined condition first, then each individually.
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 2 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Control Flow — Official Docs
+https://docs.python.org/3/tutorial/controlflow.html
+Why read this: Authoritative coverage of if, for, while, break, continue.
+
+2. Real Python: Python for Loops
+https://realpython.com/python-for-loop/
+Why read this: Deep dive with practical patterns used in production.
+
+3. List Comprehensions in Python
+https://realpython.com/list-comprehension-python/
+Why read this: A Pythonic pattern used extensively in Google-scale codebases.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Google’s spam filter uses thousands of conditions to classify emails. Design a simple rule-based spam classifier in pseudocode (plain English) with at least 5 conditions. Share it in 150–200 words. Reply to 2 peers: suggest one rule they missed or one they could combine.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — GOOGLE     ⏱ 45 minutes
+Project: Search Query Analyzer
+The Google Search Quality team needs a script to analyze a batch of queries and produce a quality report.
+Tasks:
+Accept at least 15 search queries (hardcoded or user input)
+Loop through and classify each: spam/safe, short/normal/long, contains a question word (how/why/what/where/when)
+Display summary statistics: totals per category
+Bonus: Sort queries by length using a loop (without using .sort())
+
+Deliverable: search_analyzer.py with clearly formatted output and a summary section
+
+Grading Rubric:
+Criteria
+Marks
+Correct use of for and while loops
+3/10
+All conditions handle all cases
+3/10
+Summary statistics are accurate
+2/10
+Code is readable with comments
+2/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. What does range(2, 10, 2) produce?
+Answer: [2, 4, 6, 8] — start at 2, stop before 10, step 2
+Q2. Which keyword skips to the next loop iteration?
+Answer: continue
+Q3. What happens if a while loop condition is always True with no break?
+Answer: Infinite loop — the program never stops
+Q4. Write a one-line list comprehension: squares of 1 to 5.
+Answer: [x**2 for x in range(1, 6)]
+Q5. What is the difference between == and = in Python?
+Answer: == compares two values (returns bool). = assigns a value to a variable.
+
+
+
+
+
+  Unit 3: Functions & Modules
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Define and call functions with parameters and return values
+Use default and keyword arguments
+Understand variable scope: local vs global
+Import and use Python's standard library modules
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Netflix’s recommendation system — responsible for 80% of content watched — is built as hundreds of small, specialised functions. Each does one job: score a title, filter by language, apply a taste cluster. Functions are the building blocks of every major tech product.
+
+Key Concepts:
+def function_name(params): ... return value
+Parameters vs arguments  |  default values  |  *args  |  **kwargs
+return vs print — functions should return, not print
+Scope: LEGB rule — Local, Enclosing, Global, Built-in
+Docstrings: triple-quoted explanation at the top of every function
+Lambda: score = lambda x: x * 1.5
+Modules: import math, random, datetime, os
+
+Netflix-style recommendation scorer:
+import random
+
+def calculate_match_score(user_rating, genre_weight=1.0, recency_bonus=0):
+    """
+    Calculate a Netflix-style match percentage for a title.
+    Args:
+        user_rating (float): Historical rating 0-5
+        genre_weight (float): How much user likes this genre (0.5-2.0)
+        recency_bonus (int): Extra points for recent titles
+    Returns:
+        int: Match percentage 0-100
+    """
+    base_score = (user_rating / 5.0) * 100
+    weighted   = base_score * genre_weight + recency_bonus
+    return min(int(weighted), 100)
+
+titles = ["Stranger Things", "The Crown", "Squid Game"]
+for title in titles:
+    score = calculate_match_score(
+        user_rating=random.uniform(3, 5),
+        genre_weight=random.choice([0.8, 1.0, 1.5]),
+        recency_bonus=random.randint(0, 10)
+    )
+    print(f"{title:20} -> {score}% Match")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Pure Functions
+Write 5 pure functions (no side effects): is_palindrome(s), celsius_to_fahrenheit(c), count_vowels(s), is_prime(n), bmi_category(weight_kg, height_m).
+💡 Hint: A pure function only returns a value — it never prints or modifies variables outside itself.
+Exercise 2: Default Args
+Write apply_discount(price, discount=0.10, min_price=5.0) that applies a discount but never lets price drop below min_price.
+💡 Hint: Use max(discounted, min_price) to enforce the floor price.
+Exercise 3: Module Explorer
+Use random, math, and datetime modules to: pick a random movie from a list, calculate screen diagonal using math.sqrt(), and print how many days until New Year.
+💡 Hint: from datetime import datetime; days = (datetime(2025,1,1) - datetime.today()).days
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 3 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Functions — Official Docs
+https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+Why read this: Core reference for function syntax and scope.
+
+2. Real Python: Defining Your Own Python Function
+https://realpython.com/defining-your-own-python-function/
+Why read this: Comprehensive guide from basics to advanced patterns.
+
+3. Netflix Tech Blog: Python at Netflix
+https://netflixtechblog.com/python-at-netflix-bba45dae649e
+Why read this: See how Netflix engineers use Python functions in production systems.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Netflix engineers follow the ‘single-responsibility principle’ — each function does exactly one thing. Look at code you wrote in Unit 1 or 2. How would you refactor it into 3 smaller functions? Share the original and your refactoring plan in 150–200 words. Reply to 2 peers with one improvement suggestion.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — NETFLIX     ⏱ 45 minutes
+Project: Movie Recommendation Engine
+Build a simplified version of Netflix’s recommendation logic using Python functions.
+Tasks:
+Create a list of 10 movies as dicts: {title, genre, year, avg_rating}
+Write functions: filter_by_genre(movies, genre), top_rated(movies, n=5), recommend(user_genres, movies)
+recommend() returns the top 3 movies matching user genres, sorted by rating
+Print a Netflix-style 'Top Picks for You' output
+
+Deliverable: recommender.py — modular, with docstrings on every function
+
+Grading Rubric:
+Criteria
+Marks
+Functions defined correctly with parameters and return
+3/10
+Recommendation logic is correct
+3/10
+Docstrings on all functions
+2/10
+Output matches Netflix-style display
+2/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. What keyword returns a value from a function?
+Answer: return
+Q2. What is a default argument? Give an example.
+Answer: A parameter with a pre-set value: def greet(name='World'):
+Q3. What does LEGB stand for in Python scope?
+Answer: Local, Enclosing, Global, Built-in
+Q4. Which module would you use to generate a random integer?
+Answer: random — use random.randint(a, b)
+Q5. What is wrong with: def add(a, b): print(a + b)?
+Answer: It prints instead of returning the result. Should be: return a + b
+
+
+
+
+
+  Unit 4: Data Structures: Lists, Dicts, Tuples & Sets
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Create and manipulate lists, dictionaries, tuples, and sets
+Choose the right data structure for a given problem
+Use built-in methods for searching, sorting, and transforming data
+Nest data structures to model real-world objects
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Spotify manages 100 million songs, 600 million users, and 5 billion playlists. Every playlist is a list. Every user profile is a dictionary. Artist genres are sets. Track metadata is a tuple. Picking the right structure is one of the most important engineering decisions at Spotify.
+
+Key Concepts:
+Lists []: ordered, mutable, duplicates allowed — .append() .remove() .sort() .pop()
+Dicts {}: key–value, fast lookup — .get() .keys() .values() .items()
+Tuples (): ordered, immutable — used for fixed data like (lat, lon)
+Sets {}: unordered, unique only — .add() .union() .intersection() .difference()
+Nested: list of dicts, dict of lists
+Dict comprehensions: {k: v for k, v in items}
+
+Spotify playlist — all 4 data structures:
+# Spotify-style data structures
+playlist = {
+    "name":   "Morning Boost",
+    "owner":  "alex_user",
+    "tracks": [
+        {"title": "Blinding Lights", "artist": "The Weeknd", "duration_s": 200},
+        {"title": "Levitating",      "artist": "Dua Lipa",    "duration_s": 203},
+        {"title": "Stay",            "artist": "Kid Laroi",   "duration_s": 141},
+    ],
+    "genres": {"pop", "r&b", "hip-hop"}
+}
+
+total_s = sum(t["duration_s"] for t in playlist["tracks"])
+print(f"Playlist: {playlist['name']}")
+print(f"Tracks:   {len(playlist['tracks'])}")
+print(f"Duration: {total_s // 60}m {total_s % 60}s")
+print(f"Genres:   {', '.join(playlist['genres'])}")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Playlist Builder
+Build a playlist manager with: add_track(playlist, track), remove_track(playlist, title), get_duration(playlist), most_played_artist(history). Use a list of dicts for tracks.
+💡 Hint: For most_played_artist, use a dict to count occurrences: counts[artist] = counts.get(artist, 0) + 1
+Exercise 2: User Profile
+Create a Spotify user dict with: name, followers (list), following (list), liked_songs (list of dicts), genres (set). Write mutual_follows(user1, user2) using set intersection.
+💡 Hint: set(user1['following']) & set(user2['following'])
+Exercise 3: Top Charts
+Given 20 play_count dicts {song, plays}, produce a Top 5 chart using sorting. Then find songs appearing in both a rock playlist AND a pop playlist using sets.
+💡 Hint: sorted(songs, key=lambda x: x['plays'], reverse=True)[:5]
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 4 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Data Structures — Official Docs
+https://docs.python.org/3/tutorial/datastructures.html
+Why read this: Complete reference for lists, dicts, tuples, and sets.
+
+2. Real Python: Dictionaries in Python
+https://realpython.com/python-dicts/
+Why read this: The most important Python data structure — essential reading.
+
+3. Spotify Engineering Blog
+https://engineering.atspotify.com/
+Why read this: How Spotify engineers design and query music data systems.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Design a Python data structure for a Spotify podcast episode. What fields would you include and what type (list/dict/tuple/set) for each? Post your structure as Python code (as text) and explain each choice in 150–200 words. Reply to 2 peers and suggest one field they missed.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — SPOTIFY     ⏱ 45 minutes
+Project: Playlist Manager & Music Analytics
+Build a Spotify-inspired system that stores and analyses music data.
+Tasks:
+Model at least 3 playlists, each with 5+ tracks: {name, artist, duration_s, genre}
+Functions: total_duration(playlist), unique_artists(all_playlists), common_songs(pl1, pl2), genre_distribution(playlist)
+Print a 'Wrapped'-style summary: top genre, total time, unique artists discovered
+Bonus: Sort all songs by duration and show the top 3 longest tracks
+
+Deliverable: music_analytics.py — uses all 4 data structure types
+
+Grading Rubric:
+Criteria
+Marks
+Correct use of list, dict, tuple, and set
+4/10
+All functions work correctly
+3/10
+Wrapped summary is accurate
+2/10
+Code is clean and commented
+1/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. Which data structure guarantees no duplicate values?
+Answer: Set {}
+Q2. How do you safely get a dict value that might not exist?
+Answer: dict.get('key', default) — avoids KeyError if the key is missing
+Q3. What is the key difference between a list and a tuple?
+Answer: Lists are mutable (changeable); tuples are immutable (fixed after creation)
+Q4. How do you find elements present in both set_a and set_b?
+Answer: set_a & set_b  or  set_a.intersection(set_b)
+Q5. Write a dict comprehension mapping 1–5 to their squares.
+Answer: {x: x**2 for x in range(1, 6)}
+
+
+
+
+
+  Unit 5: File Handling & Exception Management
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Read and write text and CSV files using Python
+Use the with statement and file modes correctly
+Handle errors gracefully with try/except/finally
+Raise and define custom exceptions
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Meta’s systems write hundreds of millions of posts, logs, and events to files and databases every minute. When a write fails, the app doesn’t crash — it catches the exception and retries. File I/O and error handling separate toy scripts from production systems.
+
+Key Concepts:
+open(filename, mode) — modes: r, w, a, r+
+with open(...) as f: — auto-closes even on error
+Reading: .read() .readline() .readlines()
+Writing: .write() .writelines()
+CSV: import csv — csv.reader() csv.writer() csv.DictReader() csv.DictWriter()
+try / except / else / finally structure
+Common errors: FileNotFoundError, ValueError, TypeError, ZeroDivisionError
+Raising: raise ValueError('message')
+
+Meta-style post logger with full error handling:
+import csv, os
+from datetime import datetime
+
+def log_post(user_id, content, filename="posts.csv"):
+    """Log a social post to a CSV file safely."""
+    if not content.strip():
+        raise ValueError("Post content cannot be empty")
+    if len(content) > 280:
+        raise ValueError(f"Post too long: {len(content)} chars (max 280)")
+    try:
+        file_exists = os.path.exists(filename)
+        with open(filename, "a", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=["timestamp","user_id","content","chars"])
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow({
+                "timestamp": datetime.now().isoformat(),
+                "user_id":   user_id,
+                "content":   content,
+                "chars":     len(content)
+            })
+        print(f"Post logged for user {user_id}")
+    except IOError as e:
+        print(f"File error: {e}")
+
+log_post("user_42", "Just learned Python file handling!")
+log_post("user_99", "Building the next Facebook with Python!")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Post Logger
+Extend the example: add read_posts(filename, n=10) that reads back the n most recent posts and prints them as a formatted feed.
+💡 Hint: Use csv.DictReader to read rows. Convert to list, then slice [-n:] for most recent.
+Exercise 2: Safe Calculator
+Read two numbers and an operator from a file, perform the calculation, and catch: FileNotFoundError, ValueError (non-numeric input), ZeroDivisionError. Write result to output.txt.
+💡 Hint: Use a try/except chain. Each except clause catches a different error type.
+Exercise 3: Word Frequency Counter
+Read a .txt file, count word frequencies, sort by frequency, write top 10 words to a new CSV. Handle a missing file with a friendly error message.
+💡 Hint: Use .split() for words, a dict for counts, sorted() with key=lambda x: x[1].
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 5 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python File I/O — Official Docs
+https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+Why read this: Authoritative guide to all file modes and I/O methods.
+
+2. Python Exceptions — Official Docs
+https://docs.python.org/3/tutorial/errors.html
+Why read this: Complete reference for try/except patterns.
+
+3. Real Python: Reading and Writing CSV Files
+https://realpython.com/python-csv/
+Why read this: CSV is the most common data exchange format in the industry.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Think of a real app (Instagram, WhatsApp, Gmail) and describe 3 scenarios where file I/O or exception handling is critical. For each, name the Python exception you would catch and the fallback behaviour. 150–200 words. Reply to 2 peers and add one scenario they missed.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — META     ⏱ 45 minutes
+Project: Social Feed Logger & Analyser
+Build a simplified backend for a social feed that persists posts to a file and generates usage analytics.
+Tasks:
+post_to_feed(user, content): validate and append to posts.csv
+read_feed(n=10): return the n most recent posts
+feed_stats(): total posts, unique users, avg post length, most active user
+Full exception handling for: empty post, missing file, non-string content
+A main script that simulates 20 posts then prints the stats report
+
+Deliverable: social_feed.py + posts.csv (generated) + README.txt explaining your design
+
+Grading Rubric:
+Criteria
+Marks
+File read/write works correctly
+3/10
+All exceptions handled gracefully
+3/10
+Stats are accurate
+2/10
+README explains design decisions
+2/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. Which file mode appends without erasing existing content?
+Answer: 'a' (append mode)
+Q2. Why use  with open(...)  instead of just  open(...)?
+Answer: with automatically closes the file even if an exception occurs — prevents data loss
+Q3. Which exception is raised when a file does not exist?
+Answer: FileNotFoundError
+Q4. What does the finally block do?
+Answer: Runs always — whether or not an exception occurred — used for cleanup
+Q5. How do you raise a custom error with a message?
+Answer: raise ValueError('your message here')
+
+
+
+
+
+  Unit 6: Object-Oriented Programming (OOP)
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Define classes with attributes and methods
+Implement inheritance to create class hierarchies
+Understand encapsulation, polymorphism, and abstraction
+Model real-world systems as interacting objects
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Uber’s entire platform is built around objects: Driver, Rider, Trip, Vehicle, Route, Payment. Each object has attributes (state) and methods (behaviour). When you request a ride, Uber creates a Trip object, links it to Driver and Rider objects, and calls trip.start(). That is OOP in production.
+
+Key Concepts:
+Classes: blueprints  |  Objects: instances of a class
+__init__(self, ...) — constructor called at object creation
+Instance attributes: self.name, self.speed
+Methods: functions inside a class; first parameter is always self
+Inheritance: class ElectricCar(Car): — reuse and extend parent class
+super().__init__() — calls parent constructor
+Encapsulation: _private vs public attributes
+Polymorphism: same method name, different behaviour per subclass
+__str__: controls what print(object) displays
+
+Uber ride system — full OOP model:
+from datetime import datetime
+import random
+
+class Vehicle:
+    def __init__(self, vehicle_id, make, model, capacity=4):
+        self.vehicle_id = vehicle_id
+        self.make       = make
+        self.model      = model
+        self.capacity   = capacity
+    def __str__(self):
+        return f"{self.make} {self.model} (ID: {self.vehicle_id})"
+
+class Driver:
+    def __init__(self, driver_id, name, rating=5.0):
+        self.driver_id = driver_id
+        self.name      = name
+        self.rating    = rating
+        self.trips     = []
+    def accept_trip(self, trip):
+        self.trips.append(trip)
+        print(f"Driver {self.name} accepted trip #{trip.trip_id}")
+
+class Trip:
+    def __init__(self, rider_name, pickup, dropoff, distance_km):
+        self.trip_id    = random.randint(1000, 9999)
+        self.rider_name = rider_name
+        self.pickup     = pickup
+        self.dropoff    = dropoff
+        self.distance   = distance_km
+        self.fare       = round(2.50 + 1.20 * distance_km, 2)
+        self.status     = "REQUESTED"
+    def start(self):
+        self.status = "IN_PROGRESS"
+        print(f"Trip #{self.trip_id}: {self.pickup} to {self.dropoff}")
+    def complete(self):
+        self.status = "COMPLETED"
+        print(f"Trip #{self.trip_id} done. Fare: ${self.fare}")
+
+driver = Driver("D001", "Maria")
+trip   = Trip("Alex", "Airport", "Downtown", 12.5)
+driver.accept_trip(trip)
+trip.start()
+trip.complete()
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Vehicle Hierarchy
+Create a Vehicle base class, then subclasses Car, UberEats (delivery), UberXL. Each overrides get_fare(distance) with different pricing. Demonstrate polymorphism by calling get_fare on all three.
+💡 Hint: UberEats adds a delivery_fee. UberXL multiplies the base rate by 1.5.
+Exercise 2: Driver Rating System
+Add rate_driver(score) to Driver. Validate score is 1–5, update a running average, raise ValueError for out-of-range. Test with 5 different ratings.
+💡 Hint: Running average: new_avg = (old_avg * (n-1) + new_score) / n
+Exercise 3: Trip History
+Build TripHistory class storing completed Trip objects. Methods: add_trip(), total_spent(), average_distance(), longest_trip().
+💡 Hint: Store trips in self.trips = []. Use max(self.trips, key=lambda t: t.distance).
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 6 coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Python Classes — Official Docs
+https://docs.python.org/3/tutorial/classes.html
+Why read this: The official Python class documentation — essential reading.
+
+2. Real Python: OOP in Python 3
+https://realpython.com/python3-object-oriented-programming/
+Why read this: The best practical OOP guide for Python beginners.
+
+3. Uber Engineering Blog
+https://www.uber.com/en-US/blog/engineering/
+Why read this: See how Uber models real-world systems in production code.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+Choose any real-world system (hospital, airline, library, restaurant) and model it with 3 Python classes. List each class’s attributes and 2 key methods. Describe the relationship between classes (inheritance or composition). 150–200 words. Reply to 2 peers: suggest one missing attribute or method.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — UBER     ⏱ 45 minutes
+Project: Ride Booking System
+Build a simplified Uber dispatch system using OOP.
+Tasks:
+Classes: Driver (id, name, rating, vehicle), Rider (id, name, payment_method), Trip (driver, rider, pickup, dropoff, distance_km), TripManager
+TripManager.request_ride(rider, pickup, dropoff): finds an available driver, creates a Trip
+Trip.calculate_fare(): base fare + per-km rate + random surge multiplier (1.0–2.0)
+Driver.complete_trip(trip): updates status, appends to trip history
+Simulate 5 trips with 3 drivers and 5 riders — print a dispatch log
+
+Deliverable: ride_system.py with __str__ on every class and docstrings throughout
+
+Grading Rubric:
+Criteria
+Marks
+All classes defined correctly
+3/10
+Inheritance or composition used
+2/10
+Fare calculation is correct
+2/10
+Simulation runs cleanly
+2/10
+__str__ and docstrings present
+1/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. What is the purpose of __init__ in a Python class?
+Answer: It initializes instance attributes when an object is created (the constructor method)
+Q2. What does super().__init__() do?
+Answer: Calls the parent class’s constructor — ensures parent attributes are initialized
+Q3. What is polymorphism? Give a one-sentence example.
+Answer: Same method name behaves differently per subclass — e.g., get_fare() on Car vs UberXL returns different amounts
+Q4. What naming convention marks a private attribute?
+Answer: Single underscore prefix: self._balance (convention only — not enforced by Python)
+Q5. What does self refer to in a method?
+Answer: The specific instance (object) the method is being called on
+
+
+
+
+
+  Unit 7 — CAPSTONE: APIs, Libraries & Capstone Project
+
+🎯 Learning Outcomes
+By the end of this unit, learners will be able to:
+Make HTTP requests and parse JSON responses with the requests library
+Use pandas for data loading, cleaning, and analysis
+Visualise data with matplotlib
+Combine all course skills to build and present a complete Python project
+
+
+
+📘  CORE CONCEPTS     ⏱ 30 minutes
+Every Google product — Maps, Translate, Search — is accessible through an API. Data engineers at Google query APIs for live data, process it with pandas, and visualise it with matplotlib to tell stories with data. This capstone unit brings everything you’ve learned together.
+
+Key Concepts:
+APIs: structured data endpoints over HTTP
+requests library: .get() .post() .raise_for_status() response.json()
+JSON: parsing nested dicts and lists from API responses
+pandas: DataFrames — pd.read_csv() .describe() .groupby() .sort_values()
+matplotlib: plt.plot() .bar() .pie() .savefig() plt.subplot()
+API keys: store in environment variables, never in code
+Pipeline: fetch → clean → analyse → visualise
+
+Live API fetch + pandas analysis + chart:
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def fetch_top_python_repos():
+    url    = "https://api.github.com/search/repositories"
+    params = {"q": "language:python", "sort": "stars", "per_page": 10}
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    return response.json()["items"]
+
+repos = fetch_top_python_repos()
+df = pd.DataFrame([{
+    "name":  r["name"],
+    "stars": r["stargazers_count"],
+    "forks": r["forks_count"],
+    "owner": r["owner"]["login"]
+} for r in repos])
+
+print(df[["name","stars","forks"]].to_string(index=False))
+
+df.plot(x="name", y="stars", kind="barh", figsize=(10,6),
+        title="Top 10 Python GitHub Repos by Stars", color="#1A73E8")
+plt.tight_layout()
+plt.savefig("top_repos.png")
+print("Chart saved as top_repos.png")
+
+💻  CODING PRACTICE     ⏱ 45 minutes
+Open your coding tab alongside this content. Complete all exercises below.
+
+Exercise 1: Public API Explorer
+Use Open-Meteo (free, no key needed) to fetch today’s hourly temperature for any city. Print a table and find the hottest hour. API: https://api.open-meteo.com/v1/forecast
+💡 Hint: requests.get(url, params={...}).json() — look for hourly.temperature_2m in the response dict.
+Exercise 2: Pandas Data Cleaner
+Read a CSV of student scores (name, score1, score2, score3) into pandas. Add an 'average' column, find the top 5 students, and save a cleaned output CSV.
+💡 Hint: df['average'] = df[['score1','score2','score3']].mean(axis=1)
+Exercise 3: Matplotlib Dashboard
+Using any dataset from previous units, create 3 charts: a bar chart, a line chart, and a pie chart. Save all to PNG files.
+💡 Hint: Use plt.figure() before each chart and plt.savefig('chart_name.png') after each.
+
+🔗  EXTERNAL CODING ENVIRONMENT (SEPARATE TAB)     ⏱ 20 minutes
+Open a separate browser tab and code there while reading this page in Moodle.
+
+Replit — https://replit.com  (free account, Python 3 template)
+JupyterLite — https://jupyter.org/try  (no install, runs in browser)
+Google Colab — https://colab.research.google.com  (requires Google account)
+
+Complete all Unit 7 — CAPSTONE coding exercises in this tab and test your project code before submitting to Moodle.
+
+📖  REFERENCE READINGS     ⏱ 20 minutes
+1. Requests Library Quickstart
+https://requests.readthedocs.io/en/latest/user/quickstart/
+Why read this: The go-to HTTP library for Python — used in virtually every production project.
+
+2. pandas Getting Started
+https://pandas.pydata.org/docs/getting_started/index.html
+Why read this: pandas is the standard data analysis library in Python industry-wide.
+
+3. Google Cloud Python Client Libraries
+https://cloud.google.com/python/docs/reference
+Why read this: Real-world API usage — what a Google Cloud engineer works with daily.
+
+
+💬  REFLECTIVE FORUM     ⏱ 30 minutes
+Discussion Prompt:
+You have completed a Python course. Describe your capstone project in 150–200 words: What problem does it solve? Which API will you call? How do skills from all 7 units connect in your project? Reply to 2 peers with one technical suggestion for their implementation.
+
+Post 150–200 words in the Moodle Forum for this unit. Then reply to at least 2 peers with specific, constructive feedback.
+
+🛠  MINI PROJECT — GOOGLE / OPEN CHOICE     ⏱ 45 minutes
+Project: CAPSTONE: Data Dashboard
+Build a complete data pipeline — fetch real data from a public API, process it, analyse it, and visualise it — just like a Google Data Engineer.
+Tasks:
+Choose a public API: GitHub, Open-Meteo, REST Countries, CoinGecko, or Open Library
+Fetch at least 20 records, parse JSON, and load into a pandas DataFrame
+Clean data: handle missing values, fix data types
+Analyse: compute at least 3 meaningful statistics
+Visualise: produce at least 2 labelled charts saved as PNG files
+Write a 1-page summary report (PDF or .txt) of your findings
+
+Deliverable: capstone/ folder: main.py, data.csv, charts/ folder, report.txt, README.md
+
+Grading Rubric:
+Criteria
+Marks
+API fetch works and data loads correctly
+3/10
+Data cleaning handles edge cases
+2/10
+Analysis is meaningful and accurate
+2/10
+Charts are clear, labelled, and saved
+2/10
+Report and README are complete
+1/10
+TOTAL
+10
+
+
+✅  QUIZ / SELF-ASSESSMENT     ⏱ 20 minutes
+Check your understanding before moving to the next unit.
+
+Q1. Which Python library is used to make HTTP requests?
+Answer: requests — install with: pip install requests
+Q2. What does response.json() return?
+Answer: A Python dict or list parsed from the JSON response body
+Q3. How do you load a CSV file into a pandas DataFrame?
+Answer: df = pd.read_csv('filename.csv')
+Q4. What does raise_for_status() do?
+Answer: Raises an HTTPError if the response status code is 4xx or 5xx
+Q5. What pandas method gives count, mean, min, and max for numeric columns?
+Answer: df.describe()
+
+
