@@ -1,0 +1,62 @@
+{
+  "unit_number": 0,
+  "unit_name": "Introduction",
+  "section_name": "Introduction: Welcome to Python — Your Gateway to Big Tech",
+  "tag": "[INT]",
+  "description": "Set up a fully working Python development environment, understand the Python ecosystem, write and run your first Python script.",
+  "lessons": [
+    {
+      "title": "Core Concepts: Python Ecosystem",
+      "html_content": "<p>Python is the #1 language at Google, Netflix, Amazon, Instagram &amp; Spotify — for web, ML, automation, and cloud.</p><h3>Key Concepts</h3><ul><li>What is Python? Interpreted, high-level, dynamically typed</li><li>Python 3.x — always use Python 3.11 or higher</li><li>The ecosystem: pip, virtual environments, standard library</li><li>How Amazon uses Python: AWS Lambda, boto3, data pipelines</li><li>Running Python: terminal scripts, Jupyter notebooks, cloud functions</li></ul><h3>Your First Script</h3><pre><code>print(\"Hello, World!\")\nimport sys\nprint(f\"Running Python {sys.version}\")\nname = input(\"What is your name? \")\nprint(f\"Welcome to Python, {name}!\")</code></pre>"
+    },
+    {
+      "title": "Coding Practice: Setup Verification",
+      "html_content": "<h3>Exercise 1: Setup Verification</h3><p>Run <code>python --version</code> in your terminal. Then write a script that prints your version using <code>import sys</code> and <code>print(sys.version)</code>.</p><h3>Exercise 2: Personal Intro Script</h3><p>Write a script that asks for your name, age, and dream company with <code>input()</code>, then prints a formatted welcome message using an f-string.</p><h3>Exercise 3: Explore pip</h3><p>Run <code>pip list</code> in your terminal and write a Python script that prints a welcome message listing 3 Python libraries you want to learn.</p>"
+    },
+    {
+      "title": "Reference Readings",
+      "html_content": "<h3>Recommended Reading</h3><ol><li><strong>Python Official Tutorial</strong> — <a href=\"https://docs.python.org/3/tutorial/index.html\">docs.python.org</a> — The authoritative beginner reference.</li><li><strong>How Amazon Uses Python (AWS Blog)</strong> — <a href=\"https://aws.amazon.com/developer/language/python/\">aws.amazon.com</a> — Real-world Python usage at Amazon scale.</li><li><strong>Real Python: First Steps</strong> — <a href=\"https://realpython.com/python-first-steps/\">realpython.com</a> — Well-structured intro with interactive examples.</li></ol>"
+    }
+  ],
+  "quiz": {
+    "title": "Introduction Quiz — Welcome to Python",
+    "category_name": "Introduction - Welcome to Python",
+    "grade": 50,
+    "questions": [
+      {
+        "question_text": "What command checks your Python version in the terminal?",
+        "correct_answer": "python --version (or python3 --version on Mac/Linux)",
+        "wrong_answers": ["check python", "python -v", "py version"]
+      },
+      {
+        "question_text": "What is pip used for?",
+        "correct_answer": "Installing third-party Python packages and libraries",
+        "wrong_answers": ["Running python scripts", "Formatting code", "Compiling python"]
+      },
+      {
+        "question_text": "True or False: Python is a compiled language.",
+        "correct_answer": "False — Python is an interpreted language",
+        "wrong_answers": ["True — it compiles to machine code", "True — it uses gcc", "False — it is a markup language"]
+      },
+      {
+        "question_text": "Which company created the boto3 library for Python?",
+        "correct_answer": "Amazon (for AWS cloud services)",
+        "wrong_answers": ["Google", "Microsoft", "Meta"]
+      },
+      {
+        "question_text": "What built-in function gets text input from a user?",
+        "correct_answer": "input()",
+        "wrong_answers": ["get()", "read()", "scan()"]
+      }
+    ]
+  },
+  "assignment": {
+    "title": "Dev Environment Showcase (Amazon Theme)",
+    "instructions": "Every Amazon engineer starts Day 1 by setting up their environment exactly right. Prove yours is production-ready.<br><br><strong>Tasks:</strong><br>1. Screenshot of <code>python --version</code> showing Python 3.x<br>2. A script <code>setup_check.py</code> that prints your Python version, OS name, and 5 installed packages<br>3. A short reflection (100 words): Why Python? What do you want to build?",
+    "grade": 100
+  },
+  "forum": {
+    "title": "Introduction Discussion",
+    "prompt": "Think of a problem in your daily life that repeats. How could a Python script automate or simplify it? Describe the problem in 150–200 words and explain what your script would do. Reply to 2 peers and suggest one Python feature they could use."
+  }
+}

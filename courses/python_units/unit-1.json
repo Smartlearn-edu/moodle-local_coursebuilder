@@ -1,0 +1,62 @@
+{
+  "unit_number": 1,
+  "unit_name": "Unit 1",
+  "section_name": "Unit 1: Python Basics: Variables, Data Types & Operators",
+  "tag": "[PY1]",
+  "description": "Declare and use variables following Python naming conventions. Work with int, float, str, bool. Apply arithmetic, comparison, and logical operators. Use type conversion and f-string formatting.",
+  "lessons": [
+    {
+      "title": "Core Concepts: Variables & Data Types",
+      "html_content": "<p>Amazon's recommendation engine — the system behind 'Customers also bought…' — starts with product data: IDs (int), prices (float), names (str), availability (bool).</p><h3>Key Concepts</h3><ul><li>Variables: containers for data (int, float, str, bool, NoneType)</li><li>Naming: snake_case, descriptive, no reserved words</li><li>Arithmetic: + − * / // % ** (floor div, modulo, power)</li><li>Comparison operators: == != &gt; &lt; &gt;= &lt;= (return bool)</li><li>Type conversion: int() float() str() bool()</li><li>f-strings: f'Product: {name}, Price: ${price:.2f}'</li></ul><h3>Amazon Product Data Example</h3><pre><code>product_id     = 101\nproduct_name   = \"Wireless Headphones\"\nprice          = 49.99\nin_stock       = True\ndiscount_pct   = 0.15\ndiscounted     = price * (1 - discount_pct)\nprint(f\"Price: ${price:.2f}\")\nprint(f\"Discounted: ${discounted:.2f}\")</code></pre>"
+    },
+    {
+      "title": "Coding Practice: Variables",
+      "html_content": "<h3>Exercise 1: Product Listing</h3><p>Create variables for 3 Amazon products (id, name, price, in_stock). Print a formatted listing for each using f-strings with 2 decimal places for prices.</p><h3>Exercise 2: Price Calculator</h3><p>Build a discount calculator: input original_price and discount_percent, output final_price and savings. Use <code>round()</code> for precision.</p><h3>Exercise 3: String Manipulator</h3><p>Take a product name as input. Print it in UPPER, lower, and Title Case. Count characters with <code>len()</code>. Check if 'pro' appears in the name.</p>"
+    },
+    {
+      "title": "Reference Readings: Built-in Types",
+      "html_content": "<h3>Recommended Reading</h3><ol><li><strong>Python Built-in Types</strong> — <a href=\"https://docs.python.org/3/library/stdtypes.html\">docs.python.org</a> — Complete reference for all built-in Python types.</li><li><strong>Real Python: Variables in Python</strong> — <a href=\"https://realpython.com/python-variables/\">realpython.com</a> — Practical guide with common mistakes to avoid.</li><li><strong>f-Strings: Improved String Formatting</strong> — <a href=\"https://realpython.com/python-f-strings/\">realpython.com</a> — f-strings are the standard in all modern Python codebases.</li></ol>"
+    }
+  ],
+  "quiz": {
+    "title": "Unit 1 Quiz — Python Basics",
+    "category_name": "Unit 1 - Python Basics",
+    "grade": 50,
+    "questions": [
+      {
+        "question_text": "What data type does price = 9.99 produce?",
+        "correct_answer": "float",
+        "wrong_answers": ["int", "str", "decimal"]
+      },
+      {
+        "question_text": "What is the result of 17 % 5?",
+        "correct_answer": "2 (modulo — the remainder after division)",
+        "wrong_answers": ["3", "3.4", "12"]
+      },
+      {
+        "question_text": "How do you convert the string '42' to an integer?",
+        "correct_answer": "int('42')",
+        "wrong_answers": ["integer('42')", "parse('42')", "to_int('42')"]
+      },
+      {
+        "question_text": "Which f-string format prints price to exactly 2 decimal places?",
+        "correct_answer": "f'{price:.2f}'",
+        "wrong_answers": ["f'{price:2}'", "f'{price.2f}'", "f'{price.round(2)}'"]
+      },
+      {
+        "question_text": "What does in_stock = not False evaluate to?",
+        "correct_answer": "True",
+        "wrong_answers": ["False", "None", "Error"]
+      }
+    ]
+  },
+  "assignment": {
+    "title": "Amazon Product Price Tracker",
+    "instructions": "Amazon's pricing team monitors price changes across millions of products. Build a mini price-tracker simulating this logic.<br><br><strong>Tasks:</strong><br>1. Define 5 products as variables: name, original_price, discount_pct<br>2. Calculate and display: discounted price, savings, and a DEAL label if savings &gt; 20%<br>3. Format output in aligned columns with 2 decimal places<br>4. Calculate and print total cart value at the bottom",
+    "grade": 100
+  },
+  "forum": {
+    "title": "Unit 1 Discussion",
+    "prompt": "Amazon tracks hundreds of product attributes per listing. If you were designing a Python-based product catalog, what data types would you assign to: rating, number of reviews, prime eligibility, seller name, and delivery date? Explain your choices in 150–200 words. Reply to 2 peers and suggest one type they may have reconsidered."
+  }
+}
