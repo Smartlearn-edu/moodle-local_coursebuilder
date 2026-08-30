@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Category: Unit 1: Motion and Speed -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Physics for Young Scientists / Unit 1: Motion and Speed / Unit 1 - Motion and Speed</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY1] A cyclist travels 150 meters in 30 seconds. What is the aver...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[A cyclist travels 150 meters in 30 seconds. What is the average speed of the cyclist?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[5 m/s]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[4500 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[0.2 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[120 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY1] What is the key difference between speed and velocity?</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What is the key difference between speed and velocity?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Velocity includes both speed and a specific direction, while speed is scalar]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Speed is measured in meters and velocity is measured in seconds]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Velocity is always faster than speed]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Speed has direction while velocity does not]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY1] On a distance-time graph, what does a flat horizontal line i...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[On a distance-time graph, what does a flat horizontal line indicate?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The object is stationary (not moving)]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The object is moving at maximum speed]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The object is constantly accelerating]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The object is moving backwards]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY1] A sports car accelerates from 10 m/s to 30 m/s in 4 seconds....</text></name>
+    <questiontext format="html">
+      <text><![CDATA[A sports car accelerates from 10 m/s to 30 m/s in 4 seconds. What is its acceleration?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[5 m/s²]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[10 m/s²]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[20 m/s²]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[2.5 m/s²]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY1] What physical quantity is represented by the area under a ve...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What physical quantity is represented by the area under a velocity-time graph?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Total distance traveled]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Total mass]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Final acceleration]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Maximum force]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Category: Unit 2: Forces and Newton's Laws -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Physics for Young Scientists / Unit 2: Forces and Newton's Laws / Unit 2 - Forces and Newton's Laws</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY2] What is the weight of a 60 kg astronaut on Earth where gravi...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What is the weight of a 60 kg astronaut on Earth where gravity is approximately 9.8 N/kg?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[588 N]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[60 kg]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[6.12 N]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[600 kg]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY2] According to Newton's Second Law, what net force is required...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[According to Newton's Second Law, what net force is required to accelerate an 8 kg bowling ball at 3 m/s²?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[24 N]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[11 N]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[2.67 N]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[0.375 N]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY2] Which property of an object determines its inertia?</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Which property of an object determines its inertia?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Its mass]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Its speed]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Its color]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Its surface area]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY2] When a swimmer pushes water backwards with their hands, what...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[When a swimmer pushes water backwards with their hands, what is the reaction force?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The water pushes the swimmer forward with equal force]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The water pushes down towards the bottom of the pool]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Gravity pulls the swimmer under]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Air resistance slows the swimmer down]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY2] If the forces acting on a moving car are completely balanced...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[If the forces acting on a moving car are completely balanced (Net Force = 0 N), what happens to the car?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It continues moving at a constant speed in a straight line]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It immediately comes to an abrupt stop]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It accelerates rapidly]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It begins turning in circles]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Category: Unit 3: Energy and Work -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Physics for Young Scientists / Unit 3: Energy and Work / Unit 3 - Energy and Work</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY3] A 5 kg boulder sits at the top of a 10-meter cliff. What is ...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[A 5 kg boulder sits at the top of a 10-meter cliff. What is its Gravitational Potential Energy (use g = 9.8 N/kg)?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[490 Joules]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[50 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[98 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[2450 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY3] If a runner doubles their running speed from 3 m/s to 6 m/s,...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[If a runner doubles their running speed from 3 m/s to 6 m/s, what happens to their Kinetic Energy?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It increases by 4 times (quadruples)]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It doubles]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It remains the same]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It triples]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY3] A worker pushes a crate with a force of 200 N across a wareh...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[A worker pushes a crate with a force of 200 N across a warehouse floor for a distance of 15 meters. How much work is done?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[3,000 Joules]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[13.3 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[215 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[30,000 Joules]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY3] What is the power output of an electric crane that performs ...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What is the power output of an electric crane that performs 12,000 Joules of work in 6 seconds?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[2,000 Watts (2 kW)]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[72,000 Watts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[500 Watts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[200 Watts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY3] According to the Law of Conservation of Energy, what happens...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[According to the Law of Conservation of Energy, what happens to energy that seems 'lost' in a car engine?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[It is transformed into wasted heat and sound energy dissipated into the surroundings]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It is destroyed completely by friction]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It turns into dark matter]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[It vanishes from the universe]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Category: Unit 4: Waves Light and Sound -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Physics for Young Scientists / Unit 4: Waves Light and Sound / Unit 4 - Waves Light and Sound</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY4] An ocean wave has a frequency of 0.5 Hz and a wavelength of ...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[An ocean wave has a frequency of 0.5 Hz and a wavelength of 6 meters. What is the speed of the wave?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[3.0 m/s]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[12 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[0.083 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[6.5 m/s]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY4] Why is there no sound in the vacuum of outer space?</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Why is there no sound in the vacuum of outer space?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Sound is a mechanical wave that requires particles in a physical medium to vibrate and propagate]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Because outer space is too cold for sound to exist]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Because gravity pulls sound waves downwards]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Because light moves faster than sound]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY4] What wave property determines the musical pitch of a note pl...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What wave property determines the musical pitch of a note played on a guitar?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The frequency of the wave]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The amplitude of the wave]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The color of the guitar]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The height of the listener]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY4] When a beam of light travels from air into a glass prism, wh...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[When a beam of light travels from air into a glass prism, why does it bend (refract)?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The light slows down as it enters the optically denser glass]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The light speeds up dramatically]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The glass absorbs all the wave energy]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The light loses its electric charge]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY4] Which part of the Electromagnetic Spectrum has the shortest ...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Which part of the Electromagnetic Spectrum has the shortest wavelength and the highest energy?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Gamma rays]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Radio waves]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Microwaves]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Visible green light]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- Category: Unit 5: Electricity and Magnetism -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Physics for Young Scientists / Unit 5: Electricity and Magnetism / Unit 5 - Electricity and Magnetism</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY5] According to Ohm's Law, what voltage is required to push a c...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[According to Ohm's Law, what voltage is required to push a current of 3 Amperes through a 4 Ohm resistor?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[12 Volts]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1.33 Volts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[7 Volts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[0.75 Volts]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY5] Why are the electrical outlets and ceiling lights in homes c...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Why are the electrical outlets and ceiling lights in homes connected in parallel circuits rather than in series?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Each appliance receives full voltage and can be turned on or off independently without interrupting others]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Parallel circuits require zero electrical energy]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Series circuits cause all electrical charges to turn positive]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Parallel circuits eliminate all electrical resistance completely]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY5] What happens when you rub a plastic rod with a cloth and it ...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What happens when you rub a plastic rod with a cloth and it becomes negatively charged?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Electrons are transferred from the cloth onto the plastic rod]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Protons move from the rod to the cloth]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Neutrons are destroyed inside the rod]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The rod creates new positive charges from friction]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY5] Which of the following actions will INCREASE the strength of...</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Which of the following actions will INCREASE the strength of an electromagnet?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Increasing the number of wire loops wrapped around the iron core]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Decreasing the battery voltage]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Replacing the iron core with a plastic straw]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Uncoiling the wire into a straight line]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[PHY5] What is the SI unit used to measure electrical resistance?</text></name>
+    <questiontext format="html">
+      <text><![CDATA[What is the SI unit used to measure electrical resistance?]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[Correct! Well done.]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Review the lesson concepts and worked examples, then try again.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Ohm (Ω)]]></text>
+      <feedback format="html"><text><![CDATA[Correct!]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Ampere (A)]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Volt (V)]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Watt (W)]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

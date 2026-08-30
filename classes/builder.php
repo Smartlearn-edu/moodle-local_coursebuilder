@@ -322,10 +322,14 @@ class builder {
             $instance->completionposts = 0;
             $instance->displaywordcount = 0;
             $instance->lockdiscussionafter = 0;
-            $instance->duedate = 0;
-            $instance->cutoffdate = 0;
-            $instance->assesstimestart = 0;
-            $instance->assesstimefinish = 0;
+        } else if ($modname === 'resource') {
+            $instance->tobemigrated = 0;
+            $instance->legacyfiles = 0;
+            $instance->legacyfileslast = null;
+            $instance->display = 0; // RESOURCELIB_DISPLAY_AUTO
+            $instance->displayoptions = 'a:1:{s:10:"printintro";i:1;}';
+            $instance->filterfiles = 0;
+            $instance->revision = 1;
         }
         
         $instanceid = $DB->insert_record($modname, $instance);
@@ -415,7 +419,9 @@ class builder {
             'quiz' => 'quiz',
             'assignment' => 'assign',
             'assign' => 'assign',
-            'forum' => 'forum'
+            'forum' => 'forum',
+            'file' => 'resource',
+            'resource' => 'resource'
         ];
         return $map[$type] ?? null;
     }

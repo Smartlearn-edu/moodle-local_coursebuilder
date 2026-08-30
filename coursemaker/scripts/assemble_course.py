@@ -139,17 +139,21 @@ def create_xml(units, course_name, output_path):
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<quiz>')
 
+    from xml.sax.saxutils import escape as xml_escape
+
     for unit in units:
         quiz = unit["quiz"]
         section = unit["unit_name"]
         cat_name = quiz["category_name"]
         tag = unit["tag"]
 
+        cat_path = xml_escape(f"$course$/top/{course_name} / {section} / {cat_name}")
+
         # Category declaration
         lines.append('')
         lines.append('  <question type="category">')
         lines.append('    <category>')
-        lines.append(f'      <text>$course$/top/{course_name} / {section} / {cat_name}</text>')
+        lines.append(f'      <text>{cat_path}</text>')
         lines.append('    </category>')
         lines.append('  </question>')
 
@@ -157,10 +161,11 @@ def create_xml(units, course_name, output_path):
         for q in quiz["questions"]:
             q_text = q["question_text"]
             trunc = q_text[:50] + "..." if len(q_text) > 50 else q_text
+            name_text = xml_escape(f"{tag} {trunc}")
 
             lines.append('')
             lines.append('  <question type="multichoice">')
-            lines.append(f'    <name><text>{tag} {trunc}</text></name>')
+            lines.append(f'    <name><text>{name_text}</text></name>')
             lines.append('    <questiontext format="html">')
             lines.append(f'      <text><![CDATA[<p>{q_text}</p>]]></text>')
             lines.append('    </questiontext>')
