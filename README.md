@@ -13,6 +13,12 @@ An enterprise-grade Moodle local plugin that automates the rapid generation, str
 ## Table of Contents
 
 - [Overview](#overview)
+- [How to Use (Quick Start Guide)](#how-to-use-quick-start-guide)
+  - [1. Accessing the Plugin](#1-accessing-the-plugin)
+  - [2. Method A: Upload CSV & Companion XML Question Bank](#2-method-a-upload-csv--companion-xml-question-bank-recommended)
+  - [3. Method B: Generate from an AI Prompt or Syllabus](#3-method-b-generate-from-an-ai-prompt-or-syllabus)
+  - [4. Method C: Interactive Visual Review & "Refine with AI"](#4-method-c-interactive-visual-review--refine-with-ai)
+  - [5. Quick-Start CSV Example](#5-quick-start-csv-example)
 - [Key Features](#key-features)
 - [Architecture & Execution Flow](#architecture--execution-flow)
 - [Directory Structure](#directory-structure)
@@ -25,14 +31,10 @@ An enterprise-grade Moodle local plugin that automates the rapid generation, str
   - [The 3-Step Chunked Workflow](#the-3-step-chunked-workflow)
   - [Unit JSON Schema](#unit-json-schema)
   - [CLI Assembly Script (`assemble_course.py`)](#cli-assembly-script-assemble_coursepy)
-- [Installation & Setup](#installation--setup)
+- [Installation & Prerequisites](#installation--prerequisites)
   - [Prerequisites](#prerequisites)
   - [Standard Installation](#standard-installation)
   - [Moodle AI Subsystem Configuration](#moodle-ai-subsystem-configuration)
-- [Step-by-Step User Guides](#step-by-step-user-guides)
-  - [Workflow A: Direct CSV + XML Ingestion](#workflow-a-direct-csv--xml-ingestion)
-  - [Workflow B: Natural Language AI Generation](#workflow-b-natural-language-ai-generation)
-  - [Workflow C: Interactive Refinement & Revision](#workflow-c-interactive-refinement--revision)
 - [Completion Tracking & Visibility Conventions](#completion-tracking--visibility-conventions)
 - [Troubleshooting & Best Practices](#troubleshooting--best-practices)
 - [Developer Notes & Standards](#developer-notes--standards)
@@ -51,6 +53,113 @@ In traditional Moodle administration, creating a robust, multi-unit course is a 
 3. **Conversational Refinement ("Refine with AI")**: Allows instructional designers to iteratively modify the generated structure (e.g., *"Add a lab assignment to Unit 2"*, *"Rename Section 1 to Orientation"*) using conversational prompts.
 4. **Automated Moodle Module Instantiation**: Direct, low-overhead creation of native Moodle course modules (`label`, `page`, `quiz`, `assign`, `forum`, `resource`) with full Gradebook integration, review options, and activity completion settings.
 5. **Intelligent XML Question Mapping**: Imports companion Moodle XML question banks into the course-level question bank and employs a scoring algorithm to automatically populate quizzes with matching questions.
+
+---
+
+## How to Use (Quick Start Guide)
+
+### 1. Accessing the Plugin
+
+Log into your Moodle site as an Administrator or Teacher with editing rights, then navigate to:
+```
+http://your-moodle-site.com/local/coursebuilder/index.php
+```
+
+You will see the **Upload Course Data** form:
+
+```text
++---------------------------------------------------------------+
+|  Upload Course Data                                           |
++---------------------------------------------------------------+
+|  Target Course:          [ Select an existing course...  v ]  |
+|                                                               |
+|  Data File (CSV/JSON):   [ Choose File ] (e.g. Physics.csv)   |
+|  Questions File (XML):   [ Choose File ] (e.g. Questions.xml) |
+|                                                               |
+|  -- OR Generate with AI --                                    |
+|  AI Course Prompt:       [ Describe your course here...    ]  |
+|  Syllabus File (TXT/MD): [ Choose File ] (e.g. syllabus.md)   |
+|                                                               |
+|  [ Generate / Upload ]                                        |
++---------------------------------------------------------------+
+```
+
+---
+
+### 2. Method A: Upload CSV & Companion XML Question Bank (Recommended)
+
+Use this method when you already have a structured curriculum spreadsheet (CSV) and optional Question Bank file (XML).
+
+1. **Select Target Course**: Pick an existing empty or prepared course from the **Target Course** dropdown.
+2. **Upload Course CSV**: In the **Data File (CSV/JSON)** file picker, upload your `.csv` file.
+3. **Upload Questions XML (Optional)**: In the **Questions File (Moodle XML)** file picker, upload your companion `.xml` questions file.
+4. **Click "Generate / Upload"**: The plugin parses your files and renders an instant visual preview.
+5. **Review & Build**: Inspect the preview, then click **Confirm & Build Course**.
+6. **Done**: The plugin creates all sections, activities, and auto-mapped quiz questions, then redirects you directly into your live Moodle course!
+
+---
+
+### 3. Method B: Generate from an AI Prompt or Syllabus
+
+Use this method when starting from a course description or an existing syllabus document without creating a CSV file first.
+
+1. **Select Target Course**: Choose the target course from the dropdown.
+2. **Enter AI Prompt**: In the **AI Course Prompt** box, type a clear description of the desired course:
+   > *"Create a 4-week introductory Python course. Week 1 covers Variables and Data Types; Week 2 covers Control Flow & Loops; Week 3 covers Functions & Modules; Week 4 covers Object-Oriented Programming. For each week, include 3 lesson pages, a discussion forum, a programming assignment, and a quiz."*
+3. **Optional Syllabus File**: You can also upload a `.txt` or `.md` syllabus file. The AI reads your document and extracts the units and lesson structure automatically.
+4. **Click "Generate / Upload"**: Moodle's native AI Subsystem generates the entire course blueprint.
+
+---
+
+### 4. Method C: Interactive Visual Review & "Refine with AI"
+
+Before any changes are committed to your Moodle database, the plugin displays an interactive accordion preview of your course:
+
+```text
+=================================================================
+  Review Generated Course (Course Structure Preview)
+=================================================================
+  v Section 1: Introduction to Python
+    [Page]   Lesson 1 — Getting Started with Python
+    [Page]   Lesson 2 — Variables and Types
+    [Quiz]   Unit 1 Quiz — Variables & Types
+    [Assign] Unit 1 Assignment — Price Calculator
+    [Forum]  Unit 1 Discussion — Automation Ideas
+  
+  v Section 2: Control Flow & Loops
+    [Page]   Lesson 1 — Conditional Statements
+    ...
+=================================================================
+  Refine with AI
+  [ Add a 50-point lab assignment to Section 2 and rename Lesson 1 ]
+  [ Modify Course ]
+=================================================================
+  [ Confirm & Build Course ]     [ Cancel ]
+```
+
+- **Make Adjustments**: Type any refinement request into the **Refine with AI** box (e.g. *"Add a quiz to Week 2"*, *"Rename Section 1 to Orientation"*, *"Increase assignment grades to 100"*) and click **Modify Course**.
+- **Build**: Once the structure matches your needs, click **Confirm & Build Course** to instantiate all modules in Moodle.
+
+---
+
+### 5. Quick-Start CSV Example
+
+Here is a minimal, complete 2-section CSV file you can copy, save as `sample_course.csv`, and upload immediately:
+
+```csv
+type,section,name,intro,grade,visible,completion,completionview,timeopen,timeclose
+section,Welcome,Welcome to the Course,,,1,0,0,,
+label,Welcome,Important Announcements,"<div><h3>Welcome!</h3><p>Please read through all materials before starting.</p></div>",,1,0,0,,
+page,Welcome,Course Overview & Syllabus,"<div><p>This course provides an introduction to core concepts.</p><h3>Objectives</h3><ul><li>Understand fundamentals</li><li>Apply practical skills</li></ul></div>",,0,2,1,,
+forum,Welcome,Introductions Forum,"<div><h3>Introduce Yourself</h3><p>Post a brief introduction and share what you hope to learn.</p></div>",,0,1,0,,
+section,Unit 1,Unit 1: Fundamentals,,,1,0,0,,
+label,Unit 1,Unit 1 Overview,"<div><h3>Unit 1: Fundamentals</h3><p>Core foundations and concepts.</p></div>",,1,0,0,,
+page,Unit 1,Lesson 1.1 — Basic Concepts,"<div><h3>Core Concepts</h3><p>Detailed lesson body goes here...</p></div>",,0,2,1,,
+page,Unit 1,Lesson 1.2 — Practical Applications,"<div><h3>Practical Applications</h3><p>Applied examples and exercises.</p></div>",,0,2,1,,
+quiz,Unit 1,Unit 1 Quiz — Fundamentals,"<div><p>Auto-graded assessment on core concepts.</p></div>",50,0,2,1,,
+assign,Unit 1,Unit 1 Assignment — Practical Project,"<div><p><strong>Instructions:</strong> Complete the exercise and submit your response.</p></div>",100,0,1,0,,
+forum,Unit 1,Unit 1 Discussion — Reflections,"<div><blockquote>How do these fundamentals apply to your daily workflow?</blockquote></div>",,0,1,0,,
+```
 
 ---
 
@@ -434,7 +543,7 @@ Generating output files...
 
 ---
 
-## Installation & Setup
+## Installation & Prerequisites
 
 ### Prerequisites
 
@@ -470,56 +579,6 @@ To enable the built-in **AI Course Prompt** and **Syllabus File** generation fea
 2. Enable the AI Subsystem.
 3. Configure your desired AI Provider (e.g., OpenAI, Ollama, DeepSeek, or Azure).
 4. Ensure the **Generate text** action is enabled and permitted for the system context.
-
----
-
-## Step-by-Step User Guides
-
-Access the plugin interface at any time by visiting:
-```
-http://your-moodle-site.com/local/coursebuilder/index.php
-```
-
-### Workflow A: Direct CSV + XML Ingestion
-
-Use this method when you have a pre-compiled curriculum spreadsheet and question bank.
-
-1. Navigate to `/local/coursebuilder/index.php`.
-2. Select your **Target Course** from the dropdown menu (an existing empty or prepared course).
-3. Under **Data File (CSV/JSON)**, upload your course structure file (`CourseName.csv`).
-4. *(Optional but Recommended)* Under **Questions File (Moodle XML)**, upload your companion question bank (`CourseNameQuestions.xml`).
-5. Click **Generate / Upload**.
-6. The system displays an interactive **Course Structure Preview** outlining all sections and activities.
-7. Click **Confirm & Build Course**.
-8. Moodle creates all modules, populates quiz slots, rebuilds the course cache, and redirects you directly to the populated course!
-
----
-
-### Workflow B: Natural Language AI Generation
-
-Use this method to generate a course from scratch using AI:
-
-1. Navigate to `/local/coursebuilder/index.php`.
-2. Select your **Target Course**.
-3. In the **AI Course Prompt** field, type a prompt describing your course:
-   > *"Create a 4-week introductory course on Modern Web Development. Week 1 should cover HTML5 and Semantic Elements, Week 2 covers Modern CSS & Flexbox, Week 3 covers JavaScript Fundamentals, and Week 4 covers Asynchronous APIs. Each week needs 3 lessons, a discussion forum, a practical assignment, and a quiz."*
-4. *(Optional)* Upload a text or markdown syllabus document in the **Syllabus File** picker to provide syllabus context.
-5. Click **Generate / Upload**.
-6. The Moodle AI Subsystem processes the prompt and returns a structured blueprint displayed in the interactive preview.
-7. Review the generated structure.
-
----
-
-### Workflow C: Interactive Refinement & Revision
-
-Before building a course into Moodle, you can modify it using natural language:
-
-1. On the **Review Generated Course** preview screen, locate the **Refine with AI** section below the structure preview.
-2. Enter your adjustment in the modification prompt box:
-   > *"Add a mid-term project assignment to Week 2 with a 100-point rubric, and change the title of Week 4 to 'Cloud Deployment & CI/CD'."*
-3. Click **Modify Course**.
-4. The system updates the course blueprint, preserving your existing sections while applying the adjustments.
-5. Once satisfied, click **Confirm & Build Course**.
 
 ---
 
