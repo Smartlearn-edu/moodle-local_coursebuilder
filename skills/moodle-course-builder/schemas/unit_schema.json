@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Coursebuilder Unit File",
+  "description": "Schema for a single unit JSON file. One file per unit/chapter. The generic assembly script reads all unit files from a folder and produces the final CSV + XML pair.",
+  "type": "object",
+  "required": ["unit_number", "unit_name", "section_name", "tag", "description", "lessons", "quiz", "assignment", "forum"],
+  "properties": {
+    "unit_number": {
+      "type": "integer",
+      "description": "Sequential unit number (0 for intro/welcome, 1+ for content units)"
+    },
+    "unit_name": {
+      "type": "string",
+      "description": "Short name used as the Moodle section title. E.g. 'Introduction', 'Unit 1', 'Unit 2'"
+    },
+    "section_name": {
+      "type": "string",
+      "description": "Full display title. E.g. 'Unit 1: Python Basics: Variables, Data Types & Operators'"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Short code prefix for question names in XML. E.g. '[PY1]', '[INT]', '[MAT2]'"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief summary of learning objectives for this unit (plain text)"
+    },
+    "lessons": {
+      "type": "array",
+      "description": "Array of lesson pages for this unit. Minimum 1, typically 3.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "html_content"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Lesson display name. E.g. 'Core Concepts: Variables & Data Types'"
+          },
+          "html_content": {
+            "type": "string",
+            "description": "Full HTML content for the lesson page body. Must be single-line HTML. Use semantic tags (h3, p, ul, li, strong, code, pre). No inline CSS styling."
+          }
+        }
+      }
+    },
+    "quiz": {
+      "type": "object",
+      "required": ["title", "category_name", "questions"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Quiz activity name in Moodle. Must include the unit number and topic keywords for auto-mapping. E.g. 'Unit 1 Quiz — Python Basics'"
+        },
+        "category_name": {
+          "type": "string",
+          "description": "XML category suffix used in the path: $course$/top/[CourseName] / [section_name] / [category_name]. Must include unit number and topic keywords matching the quiz title. E.g. 'Unit 1 - Python Basics'"
+        },
+        "grade": {
+          "type": "integer",
+          "description": "Max grade points for the quiz. Default: 50",
+          "default": 50
+        },
+        "questions": {
+          "type": "array",
+          "description": "Array of multiple-choice questions. Typically 5 per unit.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["question_text", "correct_answer", "wrong_answers"],
+            "properties": {
+              "question_text": {
+                "type": "string",
+                "description": "The question stem (plain text)"
+              },
+              "correct_answer": {
+                "type": "string",
+                "description": "The single correct answer (plain text)"
+              },
+              "wrong_answers": {
+                "type": "array",
+                "description": "Exactly 3 wrong/distractor answers",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "required": ["title", "instructions"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Assignment activity name in Moodle"
+        },
+        "instructions": {
+          "type": "string",
+          "description": "HTML instructions for the assignment. Include rubric table if applicable."
+        },
+        "grade": {
+          "type": "integer",
+          "description": "Max grade points. Default: 100",
+          "default": 100
+        }
+      }
+    },
+    "forum": {
+      "type": "object",
+      "required": ["title", "prompt"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Forum activity name in Moodle"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Discussion prompt text (plain text or simple HTML)"
+        }
+      }
+    }
+  }
+}

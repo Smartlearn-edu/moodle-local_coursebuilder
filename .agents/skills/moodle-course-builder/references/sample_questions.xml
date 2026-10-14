@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- ======================================================== -->
+  <!-- CATEGORY 1: Unit 1 - Atomic Structure & Periodic Trends   -->
+  <!-- ======================================================== -->
+  <question type="category">
+    <category>
+      <text>$course$/top/General Chemistry / Unit 1 / Unit 1 - Atomic Structure &amp; Periodic Trends</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[CHEM1] Ground state electron configuration of Nitrogen</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is the correct ground-state electron configuration for a neutral Nitrogen atom (atomic number Z = 7)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text>Correct!</text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text>Incorrect. Review electron orbital filling rules (1s, 2s, 2p).</text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>1s² 2s² 2p³</p>]]></text>
+      <feedback format="html"><text>Correct! Nitrogen has 7 electrons: 2 in 1s, 2 in 2s, and 3 in 2p.</text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1s² 2s¹ 2p⁴</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1s² 2s² 2p⁵</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1s³ 2s² 2p²</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[CHEM1] Periodic trend for first ionization energy</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Across a period from left to right on the periodic table, what generally happens to first ionization energy, and why?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text>Correct!</text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text>Incorrect. Consider effective nuclear charge across a period.</text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>It increases, because effective nuclear charge increases while atomic radius decreases.</p>]]></text>
+      <feedback format="html"><text>Correct!</text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It decreases, because electron shielding increases drastically across a period.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It remains completely constant for all non-metals.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>It drops to zero for noble gases.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <!-- ======================================================== -->
+  <!-- CATEGORY 2: Unit 2 - Stoichiometry & Reaction Kinetics   -->
+  <!-- ======================================================== -->
+  <question type="category">
+    <category>
+      <text>$course$/top/General Chemistry / Unit 2 / Unit 2 - Stoichiometry &amp; Reaction Kinetics</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[CHEM2] Definition of a limiting reactant</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In a chemical reaction, what defines the <strong>limiting reactant</strong>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text>Correct!</text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text>Incorrect. The limiting reactant is determined by mole stoichiometry, not initial mass alone.</text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>The reactant that is completely consumed first, limiting the amount of product that can be formed.</p>]]></text>
+      <feedback format="html"><text>Correct!</text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The reactant with the smallest initial mass in grams.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The catalyst that speeds up the rate of reaction without being consumed.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>The reactant present in the largest molar amount.</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>[CHEM2] Calculating moles from mass and molar mass</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>How many moles are present in 36.0 grams of water (H₂O), given that the molar mass of H₂O is approximately 18.0 g/mol?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text>Correct!</text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text>Incorrect. Use n = mass / molar mass (36.0 / 18.0).</text></incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>2.00 moles</p>]]></text>
+      <feedback format="html"><text>Correct! 36.0 g / 18.0 g/mol = 2.00 mol.</text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>0.50 moles</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>18.0 moles</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>648 moles</p>]]></text>
+      <feedback format="html"><text></text></feedback>
+    </answer>
+  </question>
+</quiz>

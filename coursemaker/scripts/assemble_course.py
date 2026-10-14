@@ -46,22 +46,18 @@ def load_units(folder):
 
 def validate_unit(unit, filename):
     """Basic validation that required fields exist."""
-    required = ["unit_number", "unit_name", "section_name", "tag",
-                 "description", "lessons", "quiz", "assignment", "forum"]
+    required = ["unit_number", "unit_name", "lessons"]
     missing = [f for f in required if f not in unit]
     if missing:
         print(f"ERROR in {filename}: Missing required fields: {missing}")
         sys.exit(1)
 
-    quiz = unit["quiz"]
-    if "questions" not in quiz or len(quiz["questions"]) == 0:
-        print(f"ERROR in {filename}: Quiz has no questions")
-        sys.exit(1)
-
-    for i, q in enumerate(quiz["questions"]):
-        if len(q.get("wrong_answers", [])) != 3:
-            print(f"ERROR in {filename}: Question {i+1} must have exactly 3 wrong answers")
-            sys.exit(1)
+    quiz = unit.get("quiz")
+    if quiz and quiz.get("questions"):
+        for i, q in enumerate(quiz["questions"]):
+            if len(q.get("wrong_answers", [])) != 3:
+                print(f"ERROR in {filename}: Question {i+1} must have exactly 3 wrong answers")
+                sys.exit(1)
 
 
 def create_csv(units, course_name, output_path):
@@ -77,23 +73,24 @@ def create_csv(units, course_name, output_path):
 
         for unit in units:
             section = unit["unit_name"]
-            section_title = unit["section_name"]
+            section_title = unit.get("section_name", section)
 
-            # --- Section row ---
+            # --- Section row (native title & summary, no extra banner) ---
             writer.writerow([
-                "section", section, section,
-                "", "", "1", "0", "0", "", ""
+                "section", section, section_title,
+                unit.get("description", ""), "", "1", "0", "0", "", ""
             ])
 
-            # --- Section header label ---
-            writer.writerow([
-                "label", section, section_title,
-                f"<div><h3>{section_title}</h3><p>{unit['description']}</p></div>",
-                "", "1", "0", "0", "", ""
-            ])
+            # --- Optional labels (only if explicitly requested) ---
+            if unit.get("labels"):
+                for lbl in unit["labels"]:
+                    writer.writerow([
+                        "label", section, lbl.get("title", ""),
+                        lbl.get("content", ""), "", "1", "0", "0", "", ""
+                    ])
 
             # --- Lesson pages ---
-            for i, lesson in enumerate(unit["lessons"], 1):
+            for i, lesson in enumerate(unit.get("lessons", []), 1):
                 writer.writerow([
                     "page", section,
                     f"Lesson {i} \u2014 {lesson['title']}",
@@ -102,30 +99,33 @@ def create_csv(units, course_name, output_path):
                 ])
 
             # --- Quiz ---
-            quiz = unit["quiz"]
-            grade = quiz.get("grade", 50)
-            writer.writerow([
-                "quiz", section, quiz["title"],
-                f"<div><p>{len(quiz['questions'])} auto-marked questions loaded from Moodle Question Bank.</p></div>",
-                str(grade), "0", "2", "1", "", ""
-            ])
+            if "quiz" in unit and unit["quiz"]:
+                quiz = unit["quiz"]
+                grade = quiz.get("grade", 50)
+                writer.writerow([
+                    "quiz", section, quiz["title"],
+                    f"<div><p>{len(quiz.get('questions', []))} auto-marked questions loaded from Moodle Question Bank.</p></div>",
+                    str(grade), "0", "2", "1", "", ""
+                ])
 
-            # --- Assignment ---
-            assign = unit["assignment"]
-            a_grade = assign.get("grade", 100)
-            writer.writerow([
-                "assign", section, assign["title"],
-                f"<div><p><strong>Instructions</strong><br>{assign['instructions']}</p></div>",
-                str(a_grade), "0", "1", "0", "", ""
-            ])
+            # --- Assignment (optional) ---
+            if "assignment" in unit and unit["assignment"]:
+                assign = unit["assignment"]
+                a_grade = assign.get("grade", 100)
+                writer.writerow([
+                    "assign", section, assign["title"],
+                    f"<div><p><strong>Instructions</strong><br>{assign['instructions']}</p></div>",
+                    str(a_grade), "0", "1", "0", "", ""
+                ])
 
-            # --- Forum ---
-            forum = unit["forum"]
-            writer.writerow([
-                "forum", section, forum["title"],
-                f"<div><h3>Discussion Prompt</h3><blockquote>{forum['prompt']}</blockquote></div>",
-                "", "0", "1", "0", "", ""
-            ])
+            # --- Forum (optional) ---
+            if "forum" in unit and unit["forum"]:
+                forum = unit["forum"]
+                writer.writerow([
+                    "forum", section, forum["title"],
+                    f"<div><h3>Discussion Prompt</h3><blockquote>{forum['prompt']}</blockquote></div>",
+                    "", "0", "1", "0", "", ""
+                ])
 
     print(f"\n  CSV created: {filepath}")
     return filepath
@@ -142,10 +142,13 @@ def create_xml(units, course_name, output_path):
     from xml.sax.saxutils import escape as xml_escape
 
     for unit in units:
-        quiz = unit["quiz"]
+        quiz = unit.get("quiz")
+        if not quiz or not quiz.get("questions"):
+            continue
+
         section = unit["unit_name"]
-        cat_name = quiz["category_name"]
-        tag = unit["tag"]
+        cat_name = quiz.get("category_name", f"{section} - Quiz")
+        tag = unit.get("tag", f"[{section[:4].upper()}]")
 
         cat_path = xml_escape(f"$course$/top/{course_name} / {section} / {cat_name}")
 
